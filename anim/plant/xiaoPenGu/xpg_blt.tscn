@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://65upi6a28ons"]
+
+[ext_resource type="Script" path="res://code/pea_bullet.cs" id="1_ism06"]
+[ext_resource type="Texture2D" uid="uid://diba7o61drw5r" path="res://anim/plant/xiaoPenGu/xiaoPenGu.png" id="2_r6ajr"]
+[ext_resource type="AudioStream" uid="uid://dw2t6ftx3q88u" path="res://audio/effects/小喷菇子弹.ogg" id="3_olu4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k3v6"]
+size = Vector2(12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0v4r"]
+atlas = ExtResource("2_r6ajr")
+region = Rect2(52, 36, 52, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5svi"]
+atlas = ExtResource("2_r6ajr")
+region = Rect2(0, 36, 52, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nao3l"]
+atlas = ExtResource("2_r6ajr")
+region = Rect2(208, 0, 52, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wa6e"]
+atlas = ExtResource("2_r6ajr")
+region = Rect2(156, 0, 52, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk1h5"]
+atlas = ExtResource("2_r6ajr")
+region = Rect2(104, 36, 52, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3culs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0v4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5svi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nao3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wa6e")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk1h5")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="xpgBlt" type="Area2D" node_paths=PackedStringArray("audioStreamPlayer")]
+z_index = 2
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ism06")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+btp = 2
+bltSpd = 1.7
+atkValue = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2k3v6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, -8)
+sprite_frames = SubResource("SpriteFrames_3culs")
+animation = &"explode"
+autoplay = "idle"
+offset = Vector2(8.63, 8.07)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_olu4w")
+bus = &"Effects"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.8
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="atkZom"]
+[connection signal="timeout" from="Timer" to="." method="realDes"]

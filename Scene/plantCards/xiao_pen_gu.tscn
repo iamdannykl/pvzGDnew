@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0ig43jgtpkmt"]
+
+[ext_resource type="Texture2D" uid="uid://diba7o61drw5r" path="res://anim/plant/xiaoPenGu/xiaoPenGu.png" id="1_jgrqy"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_u2srv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7082b"]
+atlas = ExtResource("1_jgrqy")
+region = Rect2(167, 42, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw8hv"]
+atlas = ExtResource("1_jgrqy")
+region = Rect2(167, 42, 24, 22)
+
+[node name="xiaoPenGu" type="TextureButton"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_right = 24.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 20)
+texture_normal = SubResource("AtlasTexture_7082b")
+script = ExtResource("2_u2srv")
+plantType = 9
+offset = Vector2(0, -3)
+heYeOffSet = Vector2(0, -3)
+cd = 7.5
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = SubResource("AtlasTexture_sw8hv")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

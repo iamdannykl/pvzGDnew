@@ -1,0 +1,158 @@
+[gd_scene load_steps=12 format=3 uid="uid://dq1xxcutr3ega"]
+
+[ext_resource type="Script" path="res://code/SunShroom.cs" id="1_dw1ht"]
+[ext_resource type="PackedScene" uid="uid://epron77jpbfb" path="res://Scene/sun_creator.tscn" id="2_5mw2u"]
+[ext_resource type="PackedScene" uid="uid://bg5byv2p6euu7" path="res://Scene/little_sun.tscn" id="3_30myo"]
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="3_tskc4"]
+[ext_resource type="Texture2D" uid="uid://dr5eopbqa3hlr" path="res://anim/plant/sunShroom/sunShroom.png" id="4_mjhmw"]
+[ext_resource type="AudioStream" uid="uid://dgpjlv68kmo24" path="res://audio/effects/植物生长.ogg" id="6_wcprs"]
+
+[sub_resource type="Animation" id="Animation_64lfs"]
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_kw44c"]
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_jafg3"]
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_au648"]
+_data = {
+"bigIdle": SubResource("Animation_64lfs"),
+"idle": SubResource("Animation_kw44c"),
+"sleep": SubResource("Animation_jafg3")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72yyo"]
+size = Vector2(19, 20)
+
+[node name="sunShroom" type="Area2D" node_paths=PackedStringArray("animPlayer", "种土上声音")]
+z_index = 1
+script = ExtResource("1_dw1ht")
+hp = 10
+noAtkPlant = true
+animPlayer = NodePath("AnimationPlayer")
+isAnimationPlayer = true
+"种土上声音" = NodePath("种土上")
+
+[node name="sunCreator" parent="." instance=ExtResource("2_5mw2u")]
+littleSun = ExtResource("3_30myo")
+
+[node name="种土上" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tskc4")
+bus = &"Effects"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3, -1)
+texture = ExtResource("4_mjhmw")
+hframes = 4
+vframes = 4
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://anim/plant/sunShroom/sunShroom.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "68e4f172e653fa6d01cc1d67bbbad2f2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_au648")
+}
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_72yyo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 55.0
+one_shot = true
+
+[node name="turnBig" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wcprs")
+bus = &"Effects"
+
+[connection signal="timeout" from="Timer" to="." method="TurnToBig"]

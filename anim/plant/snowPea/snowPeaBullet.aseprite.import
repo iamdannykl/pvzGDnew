@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dl2yfkrvssakb"
+path="res://.godot/imported/snowPeaBullet.aseprite-7467b3a8c8892d2379fe0fc076ff8fc1.res"
+
+[deps]
+
+source_file="res://anim/plant/snowPea/snowPeaBullet.aseprite"
+dest_files=["res://.godot/imported/snowPeaBullet.aseprite-7467b3a8c8892d2379fe0fc076ff8fc1.res"]
+
+[params]
+

@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://o2ownn0dtepd"]
+
+[ext_resource type="Texture2D" uid="uid://3k7wqfwfl7d" path="res://anim/backGround/bgRes/DS DSi - Plants vs Zombies - Pool.png" id="1_6bbtf"]
+[ext_resource type="Script" path="res://code/GridSys.cs" id="2_u2lko"]
+[ext_resource type="Script" path="res://code/createZom.cs" id="2_w5sd1"]
+[ext_resource type="AudioStream" uid="uid://cot0ucu3fn0r6" path="res://audio/bgm/泳池.mp3" id="4_bb8k3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_a1v27"]
+
+[node name="poolDay" type="Sprite2D" node_paths=PackedStringArray("waveTimer", "startTimer")]
+texture = ExtResource("1_6bbtf")
+region_enabled = true
+region_rect = Rect2(11, 47, 447, 192)
+script = ExtResource("2_w5sd1")
+waveTimer = NodePath("waveTimer")
+eachBoJianGe = 4
+startTimer = NodePath("Timer")
+
+[node name="zuoxia" type="Node2D" parent="."]
+position = Vector2(-127, 82)
+
+[node name="youshang" type="Node2D" parent="."]
+position = Vector2(77, -57)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="waveTimer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bb8k3")
+autoplay = true
+bus = &"Bgm"
+
+[node name="GridSys" type="Node2D" parent="." node_paths=PackedStringArray("zuoxia", "youshang")]
+script = ExtResource("2_u2lko")
+zuoxia = NodePath("../zuoxia")
+youshang = NodePath("../youshang")
+
+[node name="eachWaveTime" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="zomBarTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="check" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 98.2831)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_a1v27")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, -79.1444)
+rotation = -3.14159
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("WorldBoundaryShape2D_a1v27")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="waveTimer" to="." method="jiShiJieShu"]
+[connection signal="timeout" from="eachWaveTime" to="." method="nextWaveAfterWait"]

@@ -1,0 +1,99 @@
+[gd_scene load_steps=12 format=3 uid="uid://31q3j34r4go0"]
+
+[ext_resource type="Texture2D" uid="uid://bye78b2275w5y" path="res://anim/plant/rePeater/DS DSi - Plants vs Zombies - Repeater.png" id="1_fcx4e"]
+[ext_resource type="Script" path="res://anim/plant/rePeater/reperter.cs" id="1_hujjw"]
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="3_5icad"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi78g"]
+atlas = ExtResource("1_fcx4e")
+region = Rect2(0, 35, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbrhn"]
+atlas = ExtResource("1_fcx4e")
+region = Rect2(35, 35, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlpfh"]
+atlas = ExtResource("1_fcx4e")
+region = Rect2(35, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvyga"]
+atlas = ExtResource("1_fcx4e")
+region = Rect2(70, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jigyd"]
+atlas = ExtResource("1_fcx4e")
+region = Rect2(0, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlqp0"]
+atlas = ExtResource("1_fcx4e")
+region = Rect2(105, 0, 35, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jrexk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi78g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbrhn")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlpfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvyga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlpfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jigyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlqp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlpfh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11drb"]
+
+[node name="repeater" type="Area2D" node_paths=PackedStringArray("anim", "rayCast2D", "种土上声音")]
+script = ExtResource("1_hujjw")
+anim = NodePath("AnimatedSprite2D")
+attackFrame = 1
+hp = 10
+rayCast2D = NodePath("RayCast2D")
+"种土上声音" = NodePath("种土上")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, 8.5)
+sprite_frames = SubResource("SpriteFrames_jrexk")
+animation = &"attack"
+autoplay = "idle"
+offset = Vector2(0, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -4.5)
+shape = SubResource("CircleShape2D_11drb")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-0.5, -4.5)
+target_position = Vector2(232, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="pos" type="Node2D" parent="."]
+position = Vector2(6.5, -12.5)
+
+[node name="种土上" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5icad")

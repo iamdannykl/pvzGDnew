@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3xor7wria67x"]
+
+[ext_resource type="Script" path="res://code/HeYe.cs" id="1_2w1we"]
+[ext_resource type="Texture2D" uid="uid://dxyc7wthr7fn6" path="res://anim/plant/heYe/DS DSi - Plants vs Zombies - Lilypad and Squash_0.PNG" id="1_mkpwf"]
+[ext_resource type="AudioStream" uid="uid://c7gh55lmgfj6v" path="res://audio/effects/种水里.ogg" id="3_n0s35"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uepk2"]
+size = Vector2(20, 25)
+
+[sub_resource type="Animation" id="Animation_r7mv0"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_15o6f"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8, 1.5, 2.3, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.2, -0.55379, -1.7, -0.25, 0, 0.25, 0, 0, -0.161353, -0.599665, 0.2, 0.743297, 1.7, -0.25, 0, 0.25, 0, 0, -0.2, 0.543745, 0.25, 0),
+"times": PackedFloat32Array(0, 0.8, 1.5, 2.3, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6xkkq"]
+_data = {
+"RESET": SubResource("Animation_r7mv0"),
+"idle": SubResource("Animation_15o6f")
+}
+
+[node name="heYe" type="Area2D" node_paths=PackedStringArray("animPlayer", "种水上声音")]
+z_index = 1
+collision_mask = 0
+script = ExtResource("1_2w1we")
+hp = 10
+noAtkPlant = true
+animPlayer = NodePath("AnimationPlayer")
+isAnimationPlayer = true
+"种水上声音" = NodePath("种水上")
+isHeYe = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_uepk2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6xkkq")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mkpwf")
+
+[node name="种水上" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n0s35")
+bus = &"Effects"

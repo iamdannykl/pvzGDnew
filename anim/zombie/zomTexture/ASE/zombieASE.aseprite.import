@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bjr6qsx7yyyto"
+path="res://.godot/imported/zombieASE.aseprite-f9380ca03d34b0f92b6a0fdf308e8cfa.res"
+
+[deps]
+
+source_file="res://anim/zombie/zomTexture/ASE/zombieASE.aseprite"
+dest_files=["res://.godot/imported/zombieASE.aseprite-f9380ca03d34b0f92b6a0fdf308e8cfa.res"]
+
+[params]
+

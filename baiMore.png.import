@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dac8wdd1j0ev2"
+path="res://.godot/imported/baiMore.png-fa05bd5bcc88d5157d0db58450baef0b.res"
+
+[deps]
+
+source_file="res://baiMore.png"
+dest_files=["res://.godot/imported/baiMore.png-fa05bd5bcc88d5157d0db58450baef0b.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

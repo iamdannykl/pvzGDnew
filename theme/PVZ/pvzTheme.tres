@@ -1,0 +1,62 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c0yothtxikqp4"]
+
+[ext_resource type="Texture2D" uid="uid://bva8h2eyvka15" path="res://anim/backGround/bgRes/DS DSi - Plants vs Zombies - Title Screen.png" id="1_et2f6"]
+[ext_resource type="StyleBox" uid="uid://4031a1ulah1g" path="res://theme/PVZ/buttonNormal.tres" id="1_nlwjg"]
+[ext_resource type="StyleBox" uid="uid://844ouqkfnecx" path="res://theme/PVZ/button.tres" id="2_xu62f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1ogh"]
+atlas = ExtResource("1_et2f6")
+region = Rect2(552, 635, 149, 113)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0u4l"]
+texture = SubResource("AtlasTexture_m1ogh")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y01f"]
+atlas = ExtResource("1_et2f6")
+region = Rect2(1037, 418, 134, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lykjr"]
+texture = SubResource("AtlasTexture_5y01f")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et7tx"]
+atlas = ExtResource("1_et2f6")
+region = Rect2(171, 603, 174, 188)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kpxhi"]
+texture = SubResource("AtlasTexture_et7tx")
+texture_margin_left = 24.0
+texture_margin_top = 50.0
+texture_margin_right = 24.0
+texture_margin_bottom = 49.0
+axis_stretch_horizontal = 2
+
+[resource]
+Button/font_sizes/font_size = 14
+Button/styles/focus = null
+Button/styles/hover = ExtResource("2_xu62f")
+Button/styles/normal = ExtResource("1_nlwjg")
+Button/styles/pressed = ExtResource("2_xu62f")
+ItemList/styles/cursor = null
+ItemList/styles/cursor_unfocused = null
+ItemList/styles/focus = null
+ItemList/styles/hovered = null
+ItemList/styles/panel = SubResource("StyleBoxTexture_i0u4l")
+ItemList/styles/selected = null
+ItemList/styles/selected_focus = null
+Label/font_sizes/font_size = 13
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0.00351918, 0.00351916, 0.00351917, 1)
+LineEdit/font_sizes/font_size = 12
+LineEdit/styles/normal = SubResource("StyleBoxTexture_lykjr")
+OptionButton/constants/icon_max_width = 90
+Panel/styles/panel = SubResource("StyleBoxTexture_kpxhi")

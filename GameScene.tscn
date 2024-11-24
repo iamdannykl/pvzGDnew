@@ -1,0 +1,1005 @@
+[gd_scene load_steps=81 format=3 uid="uid://dix60aj2qp6g"]
+
+[ext_resource type="Script" path="res://scene.cs" id="1_d6ikj"]
+[ext_resource type="Script" path="res://code/reciever.cs" id="2_8n5vd"]
+[ext_resource type="Script" path="res://code/danli.cs" id="3_sstho"]
+[ext_resource type="Script" path="res://code/resPlantAndZom.cs" id="3_v1isw"]
+[ext_resource type="PackedScene" uid="uid://v47t65bdl51o" path="res://anim/plant/peaShooter/pea_shooter.tscn" id="4_0xac8"]
+[ext_resource type="PackedScene" uid="uid://31q3j34r4go0" path="res://Prefabs/repeater.tscn" id="4_c3t61"]
+[ext_resource type="PackedScene" uid="uid://dh24crdlarfj" path="res://UI.tscn" id="4_n6eau"]
+[ext_resource type="PackedScene" uid="uid://bhcd8iig22uni" path="res://Prefabs/zombie_base.tscn" id="5_74kye"]
+[ext_resource type="Script" path="res://code/Camera2D.cs" id="5_uefq8"]
+[ext_resource type="PackedScene" uid="uid://bwekahjdpv1k4" path="res://anim/plant/sunFlower/sun_flower.tscn" id="6_p4lfu"]
+[ext_resource type="PackedScene" uid="uid://dn58pij1x2882" path="res://Prefabs/zombie1.tscn" id="7_5ec5c"]
+[ext_resource type="PackedScene" uid="uid://cj5n45w8yo0bb" path="res://anim/plant/potatoDL/potato_dl.tscn" id="7_8fcqn"]
+[ext_resource type="PackedScene" uid="uid://dnuargw8dhh3c" path="res://anim/plant/peaShooter/pea_bullet.tscn" id="7_ng5db"]
+[ext_resource type="PackedScene" uid="uid://b3xor7wria67x" path="res://anim/plant/heYe/he_ye.tscn" id="7_qjlgd"]
+[ext_resource type="Texture2D" uid="uid://e7wymqnsmj2q" path="res://Prefabs/zom/DS DSi - Plants vs Zombies - Zombie.png" id="7_x4ab5"]
+[ext_resource type="PackedScene" uid="uid://l126bxkg8cqi" path="res://anim/plant/nut/nut.tscn" id="8_2b4yu"]
+[ext_resource type="PackedScene" uid="uid://ndsnqsbpyp8j" path="res://anim/plant/cherryBoom/cherryBaoDan.tscn" id="8_06nb4"]
+[ext_resource type="Texture2D" uid="uid://cgywgkpyf5gt4" path="res://Prefabs/zom/DS DSi - Plants vs Zombies - Conehead Zombie.png" id="8_62omw"]
+[ext_resource type="Script" path="res://code/GuanQiaSaver.cs" id="10_edh3m"]
+[ext_resource type="PackedScene" uid="uid://b14ejrkmbgnww" path="res://anim/plant/snowPea/snow_pea_shooter.tscn" id="10_fuuy5"]
+[ext_resource type="Script" path="res://code/zomCard.cs" id="11_qnxan"]
+[ext_resource type="PackedScene" uid="uid://kbywjlqbpxwk" path="res://anim/plant/daZuiHua/da_zui_hua.tscn" id="12_rg1q3"]
+[ext_resource type="PackedScene" uid="uid://hdmucj01sc60" path="res://anim/plant/xiaoPenGu/xiao_pen_gu.tscn" id="13_gm8ni"]
+[ext_resource type="Texture2D" uid="uid://b25au6edd6a86" path="res://anim/icon/sunClct.png" id="13_p252q"]
+[ext_resource type="Script" path="res://code/SunClct.cs" id="14_wn85g"]
+[ext_resource type="Theme" uid="uid://cg4fh81xxnvje" path="res://theme/touMing.tres" id="15_0cm5o"]
+[ext_resource type="PackedScene" uid="uid://dc6oa5n1lq6he" path="res://anim/plant/snowPea/snow_pea_bullet.tscn" id="15_d1s16"]
+[ext_resource type="FontFile" uid="uid://3v2gdvefbosf" path="res://font/num.tres" id="15_ek4tf"]
+[ext_resource type="PackedScene" uid="uid://dq1xxcutr3ega" path="res://anim/plant/sunShroom/sun_shroom.tscn" id="15_vajd5"]
+[ext_resource type="PackedScene" uid="uid://65upi6a28ons" path="res://anim/plant/xiaoPenGu/xpg_blt.tscn" id="18_wt44i"]
+[ext_resource type="PackedScene" uid="uid://d0hrukwent4qx" path="res://anim/plant/daPenGu/da_pen_gu.tscn" id="19_t6y4v"]
+[ext_resource type="PackedScene" uid="uid://bnup8fouye3ay" path="res://anim/plant/daPenGu/dpg_blt.tscn" id="20_kvhme"]
+[ext_resource type="Texture2D" uid="uid://bs1fbqs02fmsd" path="res://anim/icon/zomBar/headICON.png" id="20_nbejk"]
+[ext_resource type="Texture2D" uid="uid://biej0nhha3lqx" path="res://anim/icon/zomBar/tiao.png" id="21_hk1ym"]
+[ext_resource type="Script" path="res://code/pathFollowControl.cs" id="21_tfmci"]
+[ext_resource type="Texture2D" uid="uid://bgarr78unxd5r" path="res://anim/icon/zomBar/greenBar.png" id="22_wvxtl"]
+[ext_resource type="Texture2D" uid="uid://dify0vllsp8hw" path="res://anim/UI/MUkuang.png" id="24_q4gbh"]
+[ext_resource type="Script" path="res://code/valueChangeTexture.cs" id="24_rx7u7"]
+[ext_resource type="Script" path="res://code/sortTheCard.cs" id="25_6i3iu"]
+[ext_resource type="Texture2D" uid="uid://dbywo5jycyc51" path="res://anim/icon/zomBar/black.png" id="25_21v8n"]
+[ext_resource type="Texture2D" uid="uid://ctbhkbqdj2yx8" path="res://anim/icon/zomBar/flag.png" id="26_sl0mu"]
+[ext_resource type="Script" path="res://code/BigWaveComing.cs" id="27_ennl7"]
+[ext_resource type="Script" path="res://code/Fps.cs" id="29_tprw0"]
+[ext_resource type="PackedScene" uid="uid://d3pedfglyypvk" path="res://Scene/plantCards/nut.tscn" id="30_d4vmd"]
+[ext_resource type="Script" path="res://code/OSname.cs" id="30_qyf86"]
+[ext_resource type="Script" path="res://code/LetsRock.cs" id="30_twt8d"]
+[ext_resource type="PackedScene" uid="uid://xbn74y3ui2e5" path="res://Scene/plantCards/cherry.tscn" id="31_ti74s"]
+[ext_resource type="PackedScene" uid="uid://b7alfw8qqqxbg" path="res://Scene/plantCards/he_ye.tscn" id="32_gj1d7"]
+[ext_resource type="PackedScene" uid="uid://cby38ysstq1gr" path="res://Scene/plantCards/re_peater.tscn" id="33_vpa25"]
+[ext_resource type="PackedScene" uid="uid://cwmacyfsm7vhc" path="res://Scene/plantCards/pea_shooter.tscn" id="34_1vs3o"]
+[ext_resource type="PackedScene" uid="uid://bn1q5odb7bqhk" path="res://Scene/plantCards/da_zui_hua.tscn" id="34_ftxfq"]
+[ext_resource type="PackedScene" uid="uid://b75jbq7p2tiqi" path="res://Scene/plantCards/sun_flower.tscn" id="35_c1fae"]
+[ext_resource type="PackedScene" uid="uid://5qmko0haxrwx" path="res://Scene/plantCards/snow_pea_shooter.tscn" id="35_qfh8y"]
+[ext_resource type="PackedScene" uid="uid://bfbb6wbwvmr7k" path="res://Scene/plantCards/potato_dl.tscn" id="36_43ijr"]
+[ext_resource type="PackedScene" uid="uid://d0ig43jgtpkmt" path="res://Scene/plantCards/xiao_pen_gu.tscn" id="37_1qrqm"]
+[ext_resource type="PackedScene" uid="uid://cqin1e5h3ndak" path="res://Scene/plantCards/da_pen_gu_card.tscn" id="39_ql44e"]
+[ext_resource type="PackedScene" uid="uid://baqsmsee24cq2" path="res://Scene/plantCards/sun_shroom_card.tscn" id="43_6yfsh"]
+[ext_resource type="Script" path="res://code/sunCreator.cs" id="48_srqrj"]
+[ext_resource type="Theme" uid="uid://c0yothtxikqp4" path="res://theme/PVZ/pvzTheme.tres" id="48_yf48k"]
+[ext_resource type="PackedScene" uid="uid://c013cle4w52oe" path="res://Scene/sun.tscn" id="49_juoko"]
+[ext_resource type="Script" path="res://code/soundManager.cs" id="57_rfbs6"]
+
+[sub_resource type="Animation" id="Animation_cmmug"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-57, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_16mf5"]
+resource_name = "leftMove"
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(85, -0.25, 0, 0.25, 0, -57, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_j8jev"]
+resource_name = "rightMove"
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-57, -0.25, 0, 0.25, 35.5, 85, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UIplantSelect/Control/GridContainer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"letCardCanFly"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sl500"]
+_data = {
+"RESET": SubResource("Animation_cmmug"),
+"leftMove": SubResource("Animation_16mf5"),
+"rightMove": SubResource("Animation_j8jev")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81lut"]
+atlas = ExtResource("7_x4ab5")
+region = Rect2(223, 7, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubm6f"]
+atlas = ExtResource("7_x4ab5")
+region = Rect2(248, 7, 24, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5strt"]
+atlas = ExtResource("8_62omw")
+region = Rect2(236, 5, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhcuv"]
+atlas = ExtResource("8_62omw")
+region = Rect2(261, 5, 24, 22)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vjfsb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dkdev"]
+texture = ExtResource("24_q4gbh")
+texture_margin_left = 44.0
+texture_margin_top = 29.0
+texture_margin_right = 38.0
+texture_margin_bottom = 49.0
+
+[sub_resource type="Animation" id="Animation_smoy6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-101, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(105, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ebvaj"]
+resource_name = "down"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-59, -0.25, 0, 0.25, 0, 105, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_5o05s"]
+resource_name = "up"
+step = 0.0166
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-101, -0.25, 0, 0.25, 0, -101, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2, 0),
+"points": PackedFloat32Array(105, -0.25, 0, 0.25, -8.28612, 3.98674, -0.0666667, 10.9333, 0.1, -16.4, -59, -0.233333, -0.649536, 0.25, 0),
+"times": PackedFloat32Array(0, 0.433333, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ikgk"]
+_data = {
+"RESET": SubResource("Animation_smoy6"),
+"down": SubResource("Animation_ebvaj"),
+"up": SubResource("Animation_5o05s")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_w1jhn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 118, -0.5, 0, 0, 0, 0, -118, -0.5)
+}
+point_count = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqb0x"]
+
+[sub_resource type="Animation" id="Animation_7w311"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.732172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.732172, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_0kifj"]
+resource_name = "fangDa"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.732172, -0.25, 0, 0.25, 0, 1.3, -0.25, 0, 0.25, 0, 1.3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.732172, -0.25, 0, 0.25, 0, 1.3, -0.25, 0, 0.25, 0, 1.3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2, 3)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"fuWei"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m8vw8"]
+_data = {
+"RESET": SubResource("Animation_7w311"),
+"fangDa": SubResource("Animation_0kifj")
+}
+
+[node name="GameScene" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_d6ikj")
+
+[node name="reciever" type="Label" parent="."]
+z_index = 1
+offset_left = -143.0
+offset_top = -36.0
+offset_right = -103.0
+offset_bottom = -13.0
+script = ExtResource("2_8n5vd")
+
+[node name="matchCard" type="Node2D" parent="."]
+position = Vector2(-216, -89)
+scale = Vector2(1.39279, 1.39279)
+script = ExtResource("3_v1isw")
+peaShooter = ExtResource("4_0xac8")
+rePeater = ExtResource("4_c3t61")
+sunFlower = ExtResource("6_p4lfu")
+potatoDL = ExtResource("7_8fcqn")
+nut = ExtResource("8_2b4yu")
+cherryBaoDan = ExtResource("8_06nb4")
+snowPeaShooter = ExtResource("10_fuuy5")
+heYe = ExtResource("7_qjlgd")
+daZuiHua = ExtResource("12_rg1q3")
+xiaoPenGu = ExtResource("13_gm8ni")
+daPenGu = ExtResource("19_t6y4v")
+sunShroom = ExtResource("15_vajd5")
+zombie = ExtResource("5_74kye")
+luZhang = ExtResource("7_5ec5c")
+pea = ExtResource("7_ng5db")
+snowPea = ExtResource("15_d1s16")
+xpgBlt = ExtResource("18_wt44i")
+dpgBlt = ExtResource("20_kvhme")
+
+[node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("backToMenu", "backToGame", "ESC", "panel", "leftSee", "label", "syg")]
+position = Vector2(0, -1)
+script = ExtResource("3_sstho")
+backToMenu = NodePath("../Camera2D/Panel/menu")
+backToGame = NodePath("../Camera2D/Panel/back")
+ESC = NodePath("../Camera2D/esc")
+panel = NodePath("../Camera2D/Panel")
+leftSee = NodePath("../Camera2D/seeLeft")
+label = NodePath("../Camera2D/Label3")
+syg = NodePath("../Camera2D/Label4")
+
+[node name="zomZone" type="Panel" parent="."]
+z_index = 1
+offset_left = 128.0
+offset_top = -68.0
+offset_right = 191.0
+offset_bottom = 86.0
+theme = ExtResource("15_0cm5o")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("animationPlayer")]
+z_index = 6
+position = Vector2(-57, 0)
+zoom = Vector2(3.465, 3.465)
+script = ExtResource("5_uefq8")
+animationPlayer = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+libraries = {
+"": SubResource("AnimationLibrary_sl500")
+}
+
+[node name="seeLeft" type="Button" parent="Camera2D"]
+visible = false
+offset_left = 97.0
+offset_top = -93.0
+offset_right = 134.0
+offset_bottom = -55.0
+scale = Vector2(0.789998, 0.789998)
+theme_override_font_sizes/font_size = 21
+text = "<="
+
+[node name="guanQiaName" type="Label" parent="Camera2D"]
+offset_left = -165.0
+offset_top = 73.0
+offset_right = -15.0
+offset_bottom = 96.0
+
+[node name="zomCardUI" type="Control" parent="Camera2D" node_paths=PackedStringArray("dataRec", "waveNum", "nextButton", "finishButton", "zr1", "zr2", "zr3")]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 57.0
+offset_right = 97.0
+offset_bottom = 40.0
+theme = ExtResource("48_yf48k")
+script = ExtResource("10_edh3m")
+dataRec = NodePath("../../reciever")
+waveNum = NodePath("Panel/waveNum")
+nextButton = NodePath("Panel/nextWave")
+finishButton = NodePath("Panel/finishEdit")
+zr1 = NodePath("../ZR1")
+zr2 = NodePath("../ZR2")
+zr3 = NodePath("../ZR3")
+
+[node name="zomCardLeft" type="ScrollContainer" parent="Camera2D/zomCardUI"]
+layout_mode = 0
+offset_left = -218.0
+offset_top = -89.0
+offset_right = -181.0
+offset_bottom = 90.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/zomCardUI/zomCardLeft"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="zombie" type="TextureButton" parent="Camera2D/zomCardUI/zomCardLeft/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_81lut")
+texture_pressed = SubResource("AtlasTexture_ubm6f")
+script = ExtResource("11_qnxan")
+
+[node name="luZhang" type="TextureButton" parent="Camera2D/zomCardUI/zomCardLeft/VBoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_5strt")
+texture_pressed = SubResource("AtlasTexture_nhcuv")
+script = ExtResource("11_qnxan")
+zomType = 1
+
+[node name="TextureButton3" type="TextureButton" parent="Camera2D/zomCardUI/zomCardLeft/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton4" type="TextureButton" parent="Camera2D/zomCardUI/zomCardLeft/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Camera2D/zomCardUI"]
+layout_mode = 0
+offset_left = -194.0
+offset_top = -93.0
+offset_right = 109.0
+offset_bottom = -70.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vjfsb")
+
+[node name="waveNum" type="Label" parent="Camera2D/zomCardUI/Panel"]
+z_index = 1
+layout_mode = 0
+offset_left = 6.0
+offset_right = 49.0
+offset_bottom = 18.0
+text = "第     波"
+
+[node name="nextWave" type="Button" parent="Camera2D/zomCardUI/Panel"]
+z_index = 1
+layout_mode = 0
+offset_left = 53.0
+offset_right = 142.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+text = "next wave"
+
+[node name="zhenRong" type="OptionButton" parent="Camera2D/zomCardUI/Panel"]
+z_index = 1
+layout_mode = 0
+offset_left = 99.0
+offset_right = 171.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+item_count = 3
+popup/item_0/text = "阵容1"
+popup/item_1/text = "阵容2"
+popup/item_1/id = 1
+popup/item_2/text = "阵容3"
+popup/item_2/id = 2
+
+[node name="finishEdit" type="Button" parent="Camera2D/zomCardUI/Panel"]
+z_index = 1
+layout_mode = 0
+offset_left = 136.0
+offset_right = 194.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+text = "finish"
+
+[node name="isBigWaveButton" type="CheckButton" parent="Camera2D/zomCardUI/Panel"]
+layout_mode = 0
+offset_left = 166.0
+offset_right = 284.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+text = "BigWave:"
+
+[node name="Button" type="Button" parent="Camera2D/zomCardUI"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 69.0
+offset_top = 63.0
+offset_right = 107.0
+offset_bottom = 94.0
+text = "test"
+
+[node name="Label" type="Label" parent="Camera2D/zomCardUI"]
+layout_mode = 0
+offset_left = -81.0
+offset_top = -67.0
+offset_right = -41.0
+offset_bottom = -53.0
+text = "选择后才能放置"
+
+[node name="ZR1" type="Node2D" parent="Camera2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="ZR2" type="Node2D" parent="Camera2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="ZR3" type="Node2D" parent="Camera2D"]
+z_index = 1
+y_sort_enabled = true
+
+[node name="UIplantSelect" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -101.0
+offset_top = 105.0
+offset_right = -61.0
+offset_bottom = 145.0
+
+[node name="Panel" type="Panel" parent="Camera2D/UIplantSelect"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -10.0
+offset_right = 349.0
+offset_bottom = 246.0
+scale = Vector2(0.6, 0.6)
+theme_override_styles/panel = SubResource("StyleBoxTexture_dkdev")
+
+[node name="Control" type="Control" parent="Camera2D/UIplantSelect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="Node2D" parent="Camera2D/UIplantSelect/Control"]
+position = Vector2(-4, -1)
+script = ExtResource("25_6i3iu")
+
+[node name="Node2D" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(0, 23)
+
+[node name="peaShooter" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D" instance=ExtResource("34_1vs3o")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Node2D2" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(22, 23)
+
+[node name="sunFlower" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D2" instance=ExtResource("35_c1fae")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Node2D3" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(46, 23)
+
+[node name="potatoDL" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D3" instance=ExtResource("36_43ijr")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Node2D4" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(69, 23)
+
+[node name="nut" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D4" instance=ExtResource("30_d4vmd")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 24.0
+grow_vertical = 0
+
+[node name="Node2D5" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(92, 23)
+
+[node name="cherry" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D5" instance=ExtResource("31_ti74s")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Node2D6" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(115, 23)
+
+[node name="heYe" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D6" instance=ExtResource("32_gj1d7")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Node2D7" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(137, 23)
+
+[node name="rePeater" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D7" instance=ExtResource("33_vpa25")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_bottom = 0.0
+grow_vertical = 0
+
+[node name="Node2D8" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(161, 23)
+
+[node name="snowPeaShooter" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D8" instance=ExtResource("35_qfh8y")]
+
+[node name="Node2D9" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(0, 41)
+
+[node name="daZuiHua" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D9" instance=ExtResource("34_ftxfq")]
+
+[node name="Node2D10" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(23, 41)
+
+[node name="xiaoPenGu" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D10" instance=ExtResource("37_1qrqm")]
+
+[node name="Node2D11" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(46, 41)
+
+[node name="DaPenGuCard" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D11" instance=ExtResource("39_ql44e")]
+
+[node name="Node2D12" type="Node2D" parent="Camera2D/UIplantSelect/Control/GridContainer"]
+position = Vector2(69, 41)
+
+[node name="sunShroomCard" parent="Camera2D/UIplantSelect/Control/GridContainer/Node2D12" instance=ExtResource("43_6yfsh")]
+
+[node name="Button" type="Button" parent="Camera2D/UIplantSelect/Control"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 108.0
+offset_right = 234.0
+offset_bottom = 151.0
+scale = Vector2(0.568449, 0.568449)
+theme = ExtResource("48_yf48k")
+theme_override_font_sizes/font_size = 16
+text = "Let's Rock!"
+script = ExtResource("30_twt8d")
+
+[node name="yx" type="Node2D" parent="Camera2D/UIplantSelect/Control"]
+position = Vector2(185, 107)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/UIplantSelect"]
+libraries = {
+"": SubResource("AnimationLibrary_8ikgk")
+}
+autoplay = "up"
+
+[node name="zomBar" type="Sprite2D" parent="Camera2D"]
+position = Vector2(132, 90)
+scale = Vector2(0.260378, 0.286658)
+texture = ExtResource("21_hk1ym")
+
+[node name="black" type="Sprite2D" parent="Camera2D/zomBar"]
+texture = ExtResource("25_21v8n")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera2D/zomBar"]
+anchors_preset = -1
+anchor_left = -0.000391593
+anchor_top = 0.0215609
+anchor_right = -0.000391593
+anchor_bottom = 0.0215609
+offset_left = -122.898
+offset_top = -6.53901
+offset_right = 123.102
+offset_bottom = 4.46099
+scale = Vector2(1.00407, 1.08407)
+max_value = 1.0
+step = 0.0
+fill_mode = 1
+texture_progress = ExtResource("22_wvxtl")
+script = ExtResource("24_rx7u7")
+metadata/_edit_use_anchors_ = true
+
+[node name="Path2D" type="Path2D" parent="Camera2D/zomBar"]
+curve = SubResource("Curve2D_w1jhn")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Camera2D/zomBar/Path2D"]
+position = Vector2(118, -0.5)
+rotation = 3.14159
+script = ExtResource("21_tfmci")
+
+[node name="headICON" type="Sprite2D" parent="Camera2D/zomBar/Path2D/PathFollow2D"]
+rotation = 3.14159
+texture = ExtResource("20_nbejk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/zomBar"]
+offset_left = -117.0
+offset_top = -45.0
+offset_right = 116.0
+offset_bottom = -5.0
+alignment = 1
+
+[node name="TextureRect1" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="Camera2D/zomBar/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+texture = ExtResource("26_sl0mu")
+stretch_mode = 5
+
+[node name="CardUI" parent="Camera2D" instance=ExtResource("4_n6eau")]
+visible = false
+z_index = 0
+offset_left = -161.0
+offset_top = -90.0
+offset_right = -161.0
+offset_bottom = -90.0
+scale = Vector2(1.39279, 1.39279)
+
+[node name="SunClct" type="Sprite2D" parent="Camera2D/CardUI"]
+position = Vector2(28.0013, 7.89781)
+scale = Vector2(0.987224, 0.987224)
+texture = ExtResource("13_p252q")
+script = ExtResource("14_wn85g")
+sunNum = 100
+
+[node name="Area2D" type="Area2D" parent="Camera2D/CardUI/SunClct"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/CardUI/SunClct/Area2D"]
+shape = SubResource("CircleShape2D_oqb0x")
+
+[node name="Label" type="Label" parent="Camera2D/CardUI/SunClct"]
+offset_left = 9.71426
+offset_top = -9.14288
+offset_right = 67.7143
+offset_bottom = 18.8571
+theme_override_fonts/font = ExtResource("15_ek4tf")
+theme_override_font_sizes/font_size = 18
+text = "100"
+
+[node name="esc" type="Button" parent="Camera2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = -93.0
+offset_right = 188.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("48_yf48k")
+text = "ESC"
+
+[node name="Label" type="Label" parent="Camera2D"]
+visible = false
+offset_left = -117.917
+offset_top = 18.6885
+offset_right = -77.9165
+offset_bottom = 41.6885
+
+[node name="Label2" type="Label" parent="Camera2D"]
+visible = false
+offset_left = 0.738541
+offset_top = 37.256
+offset_right = 40.7385
+offset_bottom = 60.256
+
+[node name="BigWaveComing" type="Label" parent="Camera2D"]
+visible = false
+offset_left = -166.698
+offset_top = -18.7906
+offset_right = 177.302
+offset_bottom = 30.2094
+scale = Vector2(0.732172, 0.732172)
+pivot_offset = Vector2(164.897, 22.481)
+theme_override_colors/font_color = Color(0.975664, 4.57242e-06, 1.54018e-06, 1)
+theme_override_colors/font_shadow_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "A HUGE WAVE OF ZOMBIES IS 
+APPROACHING  !"
+horizontal_alignment = 1
+script = ExtResource("27_ennl7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/BigWaveComing"]
+libraries = {
+"": SubResource("AnimationLibrary_m8vw8")
+}
+
+[node name="Label3" type="Label" parent="Camera2D"]
+visible = false
+offset_left = -106.0
+offset_right = -66.0
+offset_bottom = 23.0
+
+[node name="Label4" type="Label" parent="Camera2D"]
+visible = false
+offset_left = 77.0
+offset_top = 1.0
+offset_right = 117.0
+offset_bottom = 24.0
+
+[node name="Panel" type="Panel" parent="Camera2D"]
+visible = false
+z_index = 2
+offset_left = -56.0
+offset_top = -67.0
+offset_right = 103.0
+offset_bottom = 66.0
+theme = ExtResource("48_yf48k")
+script = ExtResource("57_rfbs6")
+
+[node name="shengYin" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 39.0
+offset_right = 50.0
+offset_bottom = 57.0
+text = "声音："
+
+[node name="sound" type="HSlider" parent="Camera2D/Panel/shengYin"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 3.0
+offset_right = 128.0
+offset_bottom = 19.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="yinXiao" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 56.0
+offset_right = 50.0
+offset_bottom = 74.0
+text = "音效："
+
+[node name="soundEffect" type="HSlider" parent="Camera2D/Panel/yinXiao"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 2.0
+offset_right = 128.0
+offset_bottom = 18.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="menu" type="Button" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 81.0
+offset_right = 67.0
+offset_bottom = 121.0
+text = "菜单"
+
+[node name="back" type="Button" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 81.0
+offset_right = 137.0
+offset_bottom = 121.0
+text = "返回"
+
+[node name="fps" type="Label" parent="Camera2D"]
+offset_left = -32.0
+offset_top = 68.0
+offset_right = 40.0
+offset_bottom = 91.0
+theme_override_font_sizes/font_size = 16
+text = "FPS:"
+script = ExtResource("29_tprw0")
+
+[node name="Label" type="Label" parent="Camera2D/fps"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -25.0
+offset_right = 36.0
+offset_bottom = -2.0
+script = ExtResource("30_qyf86")
+
+[node name="sunCrtor" type="Node2D" parent="." node_paths=PackedStringArray("timer", "first")]
+position = Vector2(-65, -128)
+script = ExtResource("48_srqrj")
+sun = ExtResource("49_juoko")
+timer = NodePath("timer")
+first = NodePath("first")
+
+[node name="first" type="Timer" parent="sunCrtor"]
+wait_time = 8.0
+one_shot = true
+
+[node name="timer" type="Timer" parent="sunCrtor"]
+wait_time = 23.0
+one_shot = true
+
+[connection signal="button_up" from="Camera2D/zomCardUI/Panel/nextWave" to="Camera2D/zomCardUI" method="clickNextButton"]
+[connection signal="item_selected" from="Camera2D/zomCardUI/Panel/zhenRong" to="Camera2D/zomCardUI" method="setZRnum"]
+[connection signal="toggled" from="Camera2D/zomCardUI/Panel/isBigWaveButton" to="Camera2D/zomCardUI" method="setIsBigWv"]
+[connection signal="button_up" from="Camera2D/zomCardUI/Button" to="Camera2D/zomCardUI" method="deSerializeJsonToObject"]
+[connection signal="button_up" from="Camera2D/UIplantSelect/Control/Button" to="Camera2D/UIplantSelect/Control/Button" method="startCreateZom"]
+[connection signal="area_entered" from="Camera2D/CardUI/SunClct/Area2D" to="Camera2D/CardUI/SunClct" method="getSun"]
+[connection signal="value_changed" from="Camera2D/Panel/shengYin/sound" to="Camera2D/Panel" method="setMasterValue"]
+[connection signal="value_changed" from="Camera2D/Panel/yinXiao/soundEffect" to="Camera2D/Panel" method="setEffectsValue"]
+[connection signal="timeout" from="sunCrtor/first" to="sunCrtor" method="createsunFirstRandom"]
+[connection signal="timeout" from="sunCrtor/timer" to="sunCrtor" method="createsunRandom"]

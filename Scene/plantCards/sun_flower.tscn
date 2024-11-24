@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b75jbq7p2tiqi"]
+
+[ext_resource type="Texture2D" uid="uid://ywwxl64arufl" path="res://anim/plant/sunFlower/DS DSi - Plants vs Zombies - Sunflower_3.PNG" id="1_ijivs"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_wja7y"]
+
+[node name="sunFlower" type="TextureButton"]
+offset_right = 26.0
+offset_bottom = 24.0
+pivot_offset = Vector2(1, 22)
+texture_normal = ExtResource("1_ijivs")
+script = ExtResource("2_wja7y")
+UIpianYI = Vector2(1, 0)
+plantType = 2
+sunCost = 50
+offset = Vector2(0, 5)
+heYeOffSet = Vector2(0, -10.5)
+cd = 7.5
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 24.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = ExtResource("1_ijivs")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

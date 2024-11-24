@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://5qmko0haxrwx"]
+
+[ext_resource type="Texture2D" uid="uid://dp50xk805pq21" path="res://anim/plant/snowPea/snowPeaCard.png" id="1_2gynx"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_p0j2u"]
+
+[node name="snowPeaShooter" type="TextureButton"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -21.0
+offset_right = 27.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 19)
+texture_normal = ExtResource("1_2gynx")
+script = ExtResource("2_p0j2u")
+plantType = 5
+sunCost = 175
+heYeOffSet = Vector2(0, -5)
+cd = 7.5
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = ExtResource("1_2gynx")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

@@ -1,0 +1,252 @@
+[gd_scene load_steps=24 format=3 uid="uid://d3cjcyv3utu1r"]
+
+[ext_resource type="Script" path="res://code/ZenGardenManager.cs" id="1_7am3e"]
+[ext_resource type="Texture2D" uid="uid://6437kvf8lq26" path="res://anim/backGround/DS DSi - Plants vs Zombies - Zen Normal Night Water & Toolbar Sprites.png" id="1_glt7j"]
+[ext_resource type="Script" path="res://code/zenGridSys.cs" id="2_3bfon"]
+[ext_resource type="PackedScene" uid="uid://c1o8cnsdtehv6" path="res://Scene/zenGarden/pot.tscn" id="3_vbyen"]
+[ext_resource type="AudioStream" uid="uid://3hson7ulby5l" path="res://audio/bgm/23. Zen Garden IN-GAME.mp3" id="4_edwyg"]
+[ext_resource type="Texture2D" uid="uid://b2jtrmk5ftban" path="res://anim/backGround/zenGardenGray.png" id="6_8smpn"]
+[ext_resource type="Script" path="res://code/PotUi.cs" id="7_maibg"]
+[ext_resource type="AudioStream" uid="uid://dhwcstiviam38" path="res://audio/effects/tap.ogg" id="8_b8xse"]
+[ext_resource type="Theme" uid="uid://c0yothtxikqp4" path="res://theme/PVZ/pvzTheme.tres" id="9_bg85c"]
+[ext_resource type="Script" path="res://code/BackToMain.cs" id="10_d6weo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_furev"]
+atlas = ExtResource("1_glt7j")
+region = Rect2(0, 192, 256, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g4qp"]
+atlas = ExtResource("1_glt7j")
+region = Rect2(162, 147, 28, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wudfs"]
+texture = SubResource("AtlasTexture_5g4qp")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cedxg"]
+atlas = ExtResource("1_glt7j")
+region = Rect2(36, 147, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfr2q"]
+atlas = ExtResource("6_8smpn")
+region = Rect2(36, 147, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptpwj"]
+atlas = ExtResource("1_glt7j")
+region = Rect2(113, 70, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob3me"]
+atlas = ExtResource("6_8smpn")
+region = Rect2(113, 70, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3epnj"]
+atlas = ExtResource("1_glt7j")
+region = Rect2(81, 101, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2al8"]
+atlas = ExtResource("6_8smpn")
+region = Rect2(81, 101, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6ytg"]
+atlas = ExtResource("1_glt7j")
+region = Rect2(81, 69, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27n55"]
+atlas = ExtResource("6_8smpn")
+region = Rect2(81, 69, 27, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3rum"]
+atlas = ExtResource("1_glt7j")
+region = Rect2(119, 101, 20, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq1m2"]
+atlas = ExtResource("6_8smpn")
+region = Rect2(119, 101, 20, 28)
+
+[node name="zenGarden" type="Node2D"]
+script = ExtResource("1_7am3e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-42, 0)
+texture = SubResource("AtlasTexture_furev")
+
+[node name="pots" type="Node2D" parent="Sprite2D" node_paths=PackedStringArray("zuoxia", "youshang")]
+position = Vector2(42, 0)
+script = ExtResource("2_3bfon")
+hangShu = 4
+zuoxia = NodePath("zx")
+youshang = NodePath("ys")
+
+[node name="pot" parent="Sprite2D/pots" instance=ExtResource("3_vbyen")]
+position = Vector2(-24, -21)
+
+[node name="zx" type="Node2D" parent="Sprite2D/pots"]
+position = Vector2(-147, 47)
+
+[node name="ys" type="Node2D" parent="Sprite2D/pots"]
+position = Vector2(51, -49)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_edwyg")
+autoplay = true
+bus = &"Bgm"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, -2)
+zoom = Vector2(3.465, 3.465)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 84.0
+offset_top = -96.0
+offset_right = 124.0
+offset_bottom = -56.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="potUI" type="TextureButton" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_cedxg")
+texture_pressed = SubResource("AtlasTexture_pfr2q")
+stretch_mode = 3
+script = ExtResource("7_maibg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel/potUI"]
+stream = ExtResource("8_b8xse")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 84.0
+offset_top = -56.0
+offset_right = 124.0
+offset_bottom = -16.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="waterPot" type="TextureButton" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_ptpwj")
+texture_pressed = SubResource("AtlasTexture_ob3me")
+stretch_mode = 3
+script = ExtResource("7_maibg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel2/waterPot"]
+stream = ExtResource("8_b8xse")
+
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 84.0
+offset_top = -16.0
+offset_right = 124.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="waterPot" type="TextureButton" parent="Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_3epnj")
+texture_pressed = SubResource("AtlasTexture_m2al8")
+stretch_mode = 3
+script = ExtResource("7_maibg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel3/waterPot"]
+stream = ExtResource("8_b8xse")
+
+[node name="Panel4" type="Panel" parent="."]
+offset_left = 84.0
+offset_top = 24.0
+offset_right = 124.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="waterPot" type="TextureButton" parent="Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_d6ytg")
+texture_pressed = SubResource("AtlasTexture_27n55")
+stretch_mode = 3
+script = ExtResource("7_maibg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel4/waterPot"]
+stream = ExtResource("8_b8xse")
+
+[node name="Panel5" type="Panel" parent="."]
+offset_left = 124.0
+offset_top = -96.0
+offset_right = 164.0
+offset_bottom = -56.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="waterPot" type="TextureButton" parent="Panel5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("AtlasTexture_f3rum")
+texture_pressed = SubResource("AtlasTexture_uq1m2")
+stretch_mode = 3
+script = ExtResource("7_maibg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel5/waterPot"]
+stream = ExtResource("8_b8xse")
+
+[node name="Panel6" type="Panel" parent="."]
+offset_left = 124.0
+offset_top = -56.0
+offset_right = 164.0
+offset_bottom = -16.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="Panel7" type="Panel" parent="."]
+offset_left = 124.0
+offset_top = -16.0
+offset_right = 164.0
+offset_bottom = 24.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="Panel8" type="Panel" parent="."]
+offset_left = 124.0
+offset_top = 23.0
+offset_right = 164.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wudfs")
+
+[node name="back" type="Button" parent="."]
+offset_left = 85.0
+offset_top = 63.0
+offset_right = 163.0
+offset_bottom = 92.0
+theme = ExtResource("9_bg85c")
+theme_override_font_sizes/font_size = 14
+script = ExtResource("10_d6weo")
+
+[node name="Label" type="Label" parent="back"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 72.0
+offset_bottom = 23.0
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="Panel/potUI" to="Panel/potUI" method="anXia"]
+[connection signal="button_down" from="Panel2/waterPot" to="Panel2/waterPot" method="anXia"]
+[connection signal="button_down" from="Panel3/waterPot" to="Panel3/waterPot" method="anXia"]
+[connection signal="button_down" from="Panel4/waterPot" to="Panel4/waterPot" method="anXia"]
+[connection signal="button_down" from="Panel5/waterPot" to="Panel5/waterPot" method="anXia"]
+[connection signal="button_up" from="back" to="back" method="backToMain"]

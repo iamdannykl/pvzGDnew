@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://44f4nb8ct43x"]
+
+[ext_resource type="Texture2D" uid="uid://dugs7l2qhfv6n" path="res://anim/backGround/bgRes/DS DSi - Plants vs Zombies - Front Yard.png" id="1_gp5p2"]
+[ext_resource type="Script" path="res://code/createZom.cs" id="2_lklrp"]
+[ext_resource type="Script" path="res://code/GridSys.cs" id="2_ydaw8"]
+[ext_resource type="AudioStream" uid="uid://cqlrhgn0i5053" path="res://audio/bgm/植物大战僵尸-音乐全收录_P2_白天.mp3" id="4_0oftd"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1exsa"]
+
+[node name="bkgrd" type="Sprite2D" node_paths=PackedStringArray("waveTimer", "startTimer")]
+texture = ExtResource("1_gp5p2")
+region_enabled = true
+region_rect = Rect2(1.67463, 1.97253, 447.183, 191.999)
+script = ExtResource("2_lklrp")
+waveTimer = NodePath("waveTimer")
+eachBoJianGe = 4
+startTimer = NodePath("Timer")
+
+[node name="zuoxia" type="Node2D" parent="."]
+position = Vector2(-129, 71)
+
+[node name="youshang" type="Node2D" parent="."]
+position = Vector2(77, -53)
+
+[node name="grass" type="Sprite2D" parent="."]
+position = Vector2(-24, 7)
+texture = ExtResource("1_gp5p2")
+region_enabled = true
+region_rect = Rect2(248, 242, 246, 169)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="waveTimer" type="Timer" parent="."]
+wait_time = 50.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0oftd")
+autoplay = true
+bus = &"Bgm"
+
+[node name="GridSys" type="Node2D" parent="." node_paths=PackedStringArray("zuoxia", "youshang")]
+script = ExtResource("2_ydaw8")
+zuoxia = NodePath("../zuoxia")
+youshang = NodePath("../youshang")
+
+[node name="eachWaveTime" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="zomBarTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="check" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 90)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("WorldBoundaryShape2D_1exsa")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-1, -78)
+rotation = -3.14159
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("WorldBoundaryShape2D_1exsa")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="waveTimer" to="." method="jiShiJieShu"]
+[connection signal="timeout" from="eachWaveTime" to="." method="nextWaveAfterWait"]

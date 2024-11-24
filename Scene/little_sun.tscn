@@ -1,0 +1,116 @@
+[gd_scene load_steps=10 format=3 uid="uid://bg5byv2p6euu7"]
+
+[ext_resource type="Script" path="res://code/sun.cs" id="1_ih3rx"]
+[ext_resource type="Texture2D" uid="uid://dugrpuwgxs6ay" path="res://anim/plant/sunFlower/DS DSi - Plants vs Zombies - Sun_0.PNG" id="2_mymu4"]
+[ext_resource type="Texture2D" uid="uid://obn3ermrnlyt" path="res://anim/plant/sunFlower/DS DSi - Plants vs Zombies - Sun_1.PNG" id="3_6ell0"]
+[ext_resource type="AudioStream" uid="uid://sn2qvc4yfhb1" path="res://audio/effects/阳光收取.MP3" id="4_ad2m1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_362q2"]
+radius = 14.0
+
+[sub_resource type="Animation" id="Animation_oesn3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_edvfn"]
+resource_name = "jump"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 29.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, -20.5, -32.5, -0.25, 0, 0.25, 0, 0, -0.1, -16.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ks7u"]
+_data = {
+"RESET": SubResource("Animation_oesn3"),
+"jump": SubResource("Animation_edvfn")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_me673"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mymu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ell0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="littleSun" type="Area2D"]
+z_index = 2
+scale = Vector2(0.55, 0.55)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_ih3rx")
+spd = 5.0
+sunValue = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_362q2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../animatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_8ks7u")
+}
+autoplay = "jump"
+
+[node name="animatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_me673")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.794016
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ad2m1")
+bus = &"Effects"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="input_event" from="." to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_area_2d_mouse_entered"]
+[connection signal="timeout" from="Timer" to="." method="desSelf"]

@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://01rcsq1wc5p4"]
+
+[ext_resource type="StyleBox" uid="uid://c75pa8levp1wh" path="res://theme/hover.tres" id="1_cltkf"]
+[ext_resource type="StyleBox" uid="uid://bojnm7t8v1714" path="res://new_style_box_flat.tres" id="2_qwdwv"]
+[ext_resource type="Texture2D" uid="uid://dify0vllsp8hw" path="res://anim/UI/MUkuang.png" id="3_5oiw4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbaib"]
+bg_color = Color(0, 0.265501, 0.314317, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e0j0j"]
+texture = ExtResource("3_5oiw4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gi83j"]
+texture = ExtResource("3_5oiw4")
+
+[resource]
+Button/styles/hover = ExtResource("1_cltkf")
+Button/styles/normal = ExtResource("2_qwdwv")
+Button/styles/pressed = SubResource("StyleBoxFlat_wbaib")
+ItemList/styles/panel = SubResource("StyleBoxTexture_e0j0j")
+Label/font_sizes/font_size = 14
+OptionButton/styles/hover = ExtResource("1_cltkf")
+Panel/styles/panel = SubResource("StyleBoxTexture_gi83j")

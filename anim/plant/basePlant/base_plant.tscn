@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7q2ygmgrbv5f"]
+
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="1_rik5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktl1y"]
+size = Vector2(18.3614, 17.5946)
+
+[node name="basePlant" type="Area2D"]
+
+[node name="pos" type="Node2D" parent="."]
+position = Vector2(4.96063, 2.77795)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(74.695, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_rik5p")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.325003, -0.797322)
+shape = SubResource("RectangleShape2D_ktl1y")

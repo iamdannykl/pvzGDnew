@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://s1g7dkqso0l7"]
+
+[ext_resource type="Texture2D" uid="uid://bye78b2275w5y" path="res://anim/plant/rePeater/DS DSi - Plants vs Zombies - Repeater.png" id="1_ofmnj"]
+
+[resource]
+atlas = ExtResource("1_ofmnj")
+region = Rect2(115.94, 33.9465, 26.0026, 23.5113)

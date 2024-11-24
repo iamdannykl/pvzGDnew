@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwmacyfsm7vhc"]
+
+[ext_resource type="Texture2D" uid="uid://c45kl0s6hsqcy" path="res://anim/plant/peaShooter/peaCard.png" id="1_w50ej"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_1k1bo"]
+
+[node name="peaShooter" type="TextureButton"]
+offset_right = 24.0
+offset_bottom = 22.0
+pivot_offset = Vector2(0, 20)
+texture_normal = ExtResource("1_w50ej")
+script = ExtResource("2_1k1bo")
+sunCost = 100
+heYeOffSet = Vector2(0, -5)
+cd = 7.5
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = ExtResource("1_w50ej")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

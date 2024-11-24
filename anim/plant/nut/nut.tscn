@@ -1,0 +1,275 @@
+[gd_scene load_steps=26 format=3 uid="uid://l126bxkg8cqi"]
+
+[ext_resource type="Script" path="res://code/Nut.cs" id="1_5cwvs"]
+[ext_resource type="Texture2D" uid="uid://bc0881l38xr64" path="res://anim/plant/nut/nut.png" id="1_g23x3"]
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="3_qtd1t"]
+[ext_resource type="Script" path="res://code/HpJianCe.cs" id="4_dssiy"]
+[ext_resource type="Script" path="res://anim/plant/nut/stateMachineNut.cs" id="5_qegr0"]
+[ext_resource type="AudioStream" uid="uid://d38hresrayf2d" path="res://audio/effects/坚果撞击.ogg" id="6_exlfw"]
+[ext_resource type="AudioStream" uid="uid://c0ae6geenxe5j" path="res://audio/effects/坚果撞击2.ogg" id="7_sdp5q"]
+[ext_resource type="AudioStream" uid="uid://b2sy5u5c75aev" path="res://audio/effects/坚果滚动.ogg" id="8_8xd7c"]
+
+[sub_resource type="Animation" id="Animation_6ar7a"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 6, 8]
+}
+
+[sub_resource type="Animation" id="Animation_nman3"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 12, 13, 12, 11]
+}
+
+[sub_resource type="Animation" id="Animation_27xqy"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_mn6b5"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 14, 15, 16, 17, 18, 19, 20]
+}
+
+[sub_resource type="Animation" id="Animation_wbc47"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24, 25, 26, 27, 28]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3a015"]
+_data = {
+"hurt": SubResource("Animation_6ar7a"),
+"hurt2": SubResource("Animation_nman3"),
+"idle": SubResource("Animation_27xqy"),
+"roll": SubResource("Animation_mn6b5"),
+"rollRed": SubResource("Animation_wbc47")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm7jq"]
+size = Vector2(24, 29)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_br20h"]
+animation = &"hurt"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ypl32"]
+animation = &"hurt2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q2u3s"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tef38"]
+animation = &"roll"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3adqn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yutkw"]
+advance_mode = 2
+advance_expression = "!isRoll&&jieDuan==1"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qvv2r"]
+advance_mode = 2
+advance_expression = "jieDuan==2"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_12hrv"]
+advance_mode = 2
+advance_expression = "isRoll==true"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_rimxi"]
+states/hurt/node = SubResource("AnimationNodeAnimation_br20h")
+states/hurt/position = Vector2(488, 100)
+states/hurt2/node = SubResource("AnimationNodeAnimation_ypl32")
+states/hurt2/position = Vector2(625, 98)
+states/idle/node = SubResource("AnimationNodeAnimation_q2u3s")
+states/idle/position = Vector2(328, 102)
+states/roll/node = SubResource("AnimationNodeAnimation_tef38")
+states/roll/position = Vector2(422, 185)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_3adqn"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_yutkw"), "hurt", "hurt2", SubResource("AnimationNodeStateMachineTransition_qvv2r"), "idle", "roll", SubResource("AnimationNodeStateMachineTransition_12hrv")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_401h2"]
+graph_offset = Vector2(-123, 154)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_rimxi")
+nodes/StateMachine/position = Vector2(20, 220)
+node_connections = [&"output", 0, &"StateMachine"]
+
+[node name="nut" type="Area2D" node_paths=PackedStringArray("animPlayer", "种土上声音")]
+collision_mask = 34
+script = ExtResource("1_5cwvs")
+spd = 40.0
+hp = 30
+noAtkPlant = true
+animPlayer = NodePath("AnimationPlayer")
+isAnimationPlayer = true
+"种土上声音" = NodePath("AudioStreamPlayer")
+isNut = true
+canBeEat = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3a015")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_g23x3")
+hframes = 6
+vframes = 5
+frame = 2
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://anim/plant/nut/nut.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "996c79fb6b12416b1b89b52586bed0ed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -0.5)
+shape = SubResource("RectangleShape2D_jm7jq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qtd1t")
+bus = &"Effects"
+
+[node name="HpJianCe" type="Node2D" parent="."]
+script = ExtResource("4_dssiy")
+hpJieDuan = PackedInt32Array(30, 20, 10, 0)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_401h2")
+anim_player = NodePath("../AnimationPlayer")
+script = ExtResource("5_qegr0")
+
+[node name="duang" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_exlfw")
+bus = &"Effects"
+
+[node name="duang2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_sdp5q")
+bus = &"Effects"
+
+[node name="rolling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8xd7c")
+bus = &"Effects"
+
+[connection signal="area_entered" from="." to="." method="collideWithZom"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3hson7ulby5l"
+path="res://.godot/imported/23. Zen Garden IN-GAME.mp3-63ad212b79896c44fff62cd2473ce8d7.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/23. Zen Garden IN-GAME.mp3"
+dest_files=["res://.godot/imported/23. Zen Garden IN-GAME.mp3-63ad212b79896c44fff62cd2473ce8d7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

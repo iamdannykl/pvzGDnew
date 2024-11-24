@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b12rvxk312a13"
+path="res://.godot/imported/nut.aseprite-3b04913ab0fbaac7734d4fa20808956b.res"
+
+[deps]
+
+source_file="res://anim/plant/nut/nut.aseprite"
+dest_files=["res://.godot/imported/nut.aseprite-3b04913ab0fbaac7734d4fa20808956b.res"]
+
+[params]
+

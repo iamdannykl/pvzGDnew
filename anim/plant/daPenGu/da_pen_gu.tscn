@@ -1,0 +1,204 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0hrukwent4qx"]
+
+[ext_resource type="Script" path="res://code/DaPenGu.cs" id="1_cu0iw"]
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="2_ustkr"]
+[ext_resource type="Texture2D" uid="uid://bdsar3o6hovil" path="res://anim/plant/daPenGu/daPenGu.png" id="3_qjedf"]
+[ext_resource type="AudioStream" uid="uid://tqmbk3ulgp77" path="res://audio/effects/大喷菇喷射.ogg" id="4_w7v1k"]
+
+[sub_resource type="Animation" id="Animation_mdg3x"]
+length = 1.5
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [15, 14, 13, 0, 15]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shootBlt"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tnmpf"]
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 10, 9, 8, 7, 6, 5, 4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_tjlw2"]
+length = 1.2
+loop_mode = 1
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 22, 21, 22]
+}
+
+[sub_resource type="Animation" id="Animation_ue4st"]
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 19, 18, 17, 16]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bihj0"]
+_data = {
+"attack": SubResource("Animation_mdg3x"),
+"blt": SubResource("Animation_tnmpf"),
+"idle": SubResource("Animation_tjlw2"),
+"sleep": SubResource("Animation_ue4st")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktl1y"]
+size = Vector2(20.0452, 18.2634)
+
+[node name="daPenGu" type="Area2D" node_paths=PackedStringArray("pen", "rayCast2D", "animPlayer", "种土上声音")]
+script = ExtResource("1_cu0iw")
+pen = NodePath("pen")
+hp = 10
+bulletType = 3
+rayCast2D = NodePath("RayCast2D")
+animPlayer = NodePath("AnimationPlayer")
+isAnimationPlayer = true
+"种土上声音" = NodePath("AudioStreamPlayer")
+
+[node name="pos" type="Node2D" parent="."]
+position = Vector2(16.5433, -8.42365)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ustkr")
+bus = &"Effects"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bihj0")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-0.0167046, -0.249882)
+texture = ExtResource("3_qjedf")
+offset = Vector2(25.4538, -8.78975)
+hframes = 5
+vframes = 5
+frame = 13
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "res://anim/plant/daPenGu/daPenGu.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4ef88abfef9f2bfb25457db7df98b550"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-4.67722, -8.01809)
+target_position = Vector2(105, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.188598, -8.24781)
+shape = SubResource("RectangleShape2D_ktl1y")
+
+[node name="pen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_w7v1k")
+bus = &"Effects"

@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh24crdlarfj"]
+
+[ext_resource type="Script" path="res://code/plantSelect.cs" id="1_p37t8"]
+
+[node name="Control" type="Control"]
+z_index = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="zuoKaCao" type="Node2D" parent="."]
+self_modulate = Color(0.886275, 0.309804, 0, 0)
+scale = Vector2(0.792877, 0.792877)
+script = ExtResource("1_p37t8")
+MAXcardNUm = 8
+
+[node name="Node2D" type="Node2D" parent="zuoKaCao"]
+
+[node name="Node2D2" type="Node2D" parent="zuoKaCao"]
+position = Vector2(0, 20.3373)
+
+[node name="Node2D3" type="Node2D" parent="zuoKaCao"]
+position = Vector2(0, 40.6747)
+
+[node name="Node2D4" type="Node2D" parent="zuoKaCao"]
+position = Vector2(0, 61.012)
+
+[node name="Node2D5" type="Node2D" parent="zuoKaCao"]
+position = Vector2(0, 81.3493)
+
+[node name="Node2D6" type="Node2D" parent="zuoKaCao"]
+position = Vector2(0, 101.687)
+
+[node name="Node2D7" type="Node2D" parent="zuoKaCao"]
+position = Vector2(0, 122.024)
+
+[node name="Node2D8" type="Node2D" parent="zuoKaCao"]
+position = Vector2(0, 142.361)
+
+[node name="yx" type="Node2D" parent="."]
+position = Vector2(16, 129)
+scale = Vector2(0.792877, 0.792877)

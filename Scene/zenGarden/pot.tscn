@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1o8cnsdtehv6"]
+
+[ext_resource type="Texture2D" uid="uid://6437kvf8lq26" path="res://anim/backGround/DS DSi - Plants vs Zombies - Zen Normal Night Water & Toolbar Sprites.png" id="1_2w5px"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbkx4"]
+atlas = ExtResource("1_2w5px")
+region = Rect2(34, 145, 31, 29)
+
+[node name="pot" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_vbkx4")

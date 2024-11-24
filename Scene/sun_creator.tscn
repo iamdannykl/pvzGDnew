@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://epron77jpbfb"]
+
+[ext_resource type="Script" path="res://code/sunCreator.cs" id="1_27rdh"]
+[ext_resource type="PackedScene" uid="uid://c013cle4w52oe" path="res://Scene/sun.tscn" id="2_13upt"]
+
+[node name="sunCreator" type="Node2D" node_paths=PackedStringArray("timer", "first")]
+script = ExtResource("1_27rdh")
+sun = ExtResource("2_13upt")
+timer = NodePath("Timer")
+first = NodePath("first")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 22.0
+
+[node name="first" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="createsun"]
+[connection signal="timeout" from="first" to="." method="createsunFirst"]

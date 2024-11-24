@@ -1,0 +1,200 @@
+[gd_scene load_steps=12 format=3 uid="uid://cmlfjne8ramlg"]
+
+[ext_resource type="Texture2D" uid="uid://blujqye77knm" path="res://anim/backGround/116729.png" id="1_2gy6i"]
+[ext_resource type="Script" path="res://MyOptionButton.cs" id="1_kt81u"]
+[ext_resource type="Theme" uid="uid://c0yothtxikqp4" path="res://theme/PVZ/pvzTheme.tres" id="1_yduyg"]
+[ext_resource type="Texture2D" uid="uid://cgkvaktpee1d2" path="res://anim/backGround/121700.png" id="2_mu4ga"]
+[ext_resource type="Texture2D" uid="uid://co38ss68yj1jv" path="res://anim/backGround/155613.png" id="3_dlwaa"]
+[ext_resource type="Texture2D" uid="uid://msvvoo5hngwe" path="res://anim/backGround/155614.png" id="4_0jfe4"]
+[ext_resource type="Texture2D" uid="uid://bxxqxo3xteqyp" path="res://anim/backGround/155192.png" id="5_oxqt1"]
+[ext_resource type="Script" path="res://Back.cs" id="8_pr1ak"]
+[ext_resource type="Script" path="res://code/Finish.cs" id="9_cp701"]
+[ext_resource type="Script" path="res://code/DaoRu.cs" id="10_u7y2k"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_vjdiu"]
+
+[node name="start" type="Control"]
+z_index = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_yduyg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -138.0
+offset_top = -92.0
+offset_right = 199.0
+offset_bottom = 106.0
+
+[node name="GuanQiaSetting" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 211.0
+offset_top = 44.0
+offset_right = -24.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 17
+text = "生成关卡设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 27.0
+offset_top = 43.0
+offset_right = 78.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 17
+text = "地图："
+vertical_alignment = 1
+
+[node name="mapType" type="OptionButton" parent="Panel/Type"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -1.0
+offset_right = 379.0
+offset_bottom = 95.0135
+scale = Vector2(0.225924, 0.225924)
+theme_override_font_sizes/font_size = 31
+button_group = SubResource("ButtonGroup_vjdiu")
+item_count = 5
+popup/item_0/text = "grassDay"
+popup/item_0/icon = ExtResource("1_2gy6i")
+popup/item_1/text = "grassNight"
+popup/item_1/icon = ExtResource("2_mu4ga")
+popup/item_1/id = 1
+popup/item_2/text = "poolDay"
+popup/item_2/icon = ExtResource("3_dlwaa")
+popup/item_2/id = 2
+popup/item_3/text = "poolNight"
+popup/item_3/icon = ExtResource("4_0jfe4")
+popup/item_3/id = 3
+popup/item_4/text = "roof"
+popup/item_4/icon = ExtResource("5_oxqt1")
+popup/item_4/id = 4
+script = ExtResource("1_kt81u")
+
+[node name="sunOriginal" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 55.0
+offset_right = 132.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 17
+text = "初始阳光："
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/sunOriginal"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 14.0
+offset_right = 157.0
+offset_bottom = 41.0
+
+[node name="playMode" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 107.0
+offset_right = 80.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 17
+text = "模式："
+vertical_alignment = 1
+
+[node name="Mode" type="OptionButton" parent="Panel/playMode"]
+layout_mode = 0
+offset_left = 87.0
+offset_top = -4.0
+offset_right = 171.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 12
+item_count = 4
+popup/item_0/text = "normal"
+popup/item_1/text = "排山倒海"
+popup/item_1/id = 3
+popup/item_2/text = "nutRoll"
+popup/item_2/id = 2
+popup/item_3/text = "坚不可摧"
+popup/item_3/id = 1
+
+[node name="Finish" type="Button" parent="Panel" node_paths=PackedStringArray("mapType", "sunOriginal", "modeType", "guanQiaName")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 48.5
+offset_top = -61.0
+offset_right = 148.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "完成"
+script = ExtResource("9_cp701")
+mapType = NodePath("../Type/mapType")
+sunOriginal = NodePath("../sunOriginal/LineEdit")
+modeType = NodePath("../playMode/Mode")
+guanQiaName = NodePath("../GuanQiaName/LineEdit")
+
+[node name="Back" type="Button" parent="Panel" node_paths=PackedStringArray("start")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_top = 75.0
+offset_right = -46.0
+offset_bottom = 115.0
+grow_horizontal = 0
+text = "返回"
+script = ExtResource("8_pr1ak")
+start = NodePath("../..")
+isAddWindow = true
+
+[node name="GuanQiaName" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 146.0
+offset_right = 92.0
+offset_bottom = 164.0
+text = "关卡名称："
+
+[node name="LineEdit" type="LineEdit" parent="Panel/GuanQiaName"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -4.0
+offset_right = 158.0
+offset_bottom = 23.0
+
+[node name="DaoRu" type="Button" parent="Panel" node_paths=PackedStringArray("fileDialog")]
+visible = false
+layout_mode = 0
+offset_left = 210.0
+offset_top = 59.0
+offset_right = 281.324
+offset_bottom = 97.251
+theme_override_font_sizes/font_size = 10
+text = "从外部导入"
+script = ExtResource("10_u7y2k")
+fileDialog = NodePath("FileDialog")
+
+[node name="FileDialog" type="FileDialog" parent="Panel/DaoRu"]
+title = "Open a File"
+initial_position = 2
+ok_button_text = "Open"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+show_hidden_files = true
+use_native_dialog = true
+
+[connection signal="file_selected" from="Panel/DaoRu/FileDialog" to="Panel/DaoRu" method="_on_file_dialog_file_selected"]

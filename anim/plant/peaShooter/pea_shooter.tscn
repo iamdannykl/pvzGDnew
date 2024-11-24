@@ -1,0 +1,95 @@
+[gd_scene load_steps=16 format=3 uid="uid://v47t65bdl51o"]
+
+[ext_resource type="Texture2D" uid="uid://c5giiu0iu2p0k" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_8.tres" id="1_hdeam"]
+[ext_resource type="Script" path="res://code/pea_shooter.cs" id="1_mla4w"]
+[ext_resource type="Texture2D" uid="uid://6v246k8vvyiv" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_9.tres" id="2_5ka5l"]
+[ext_resource type="Texture2D" uid="uid://bli1iiwf1lssl" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_10.tres" id="3_rsdvt"]
+[ext_resource type="Texture2D" uid="uid://cy3hkpfmkpcmu" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_0.tres" id="4_r8yjd"]
+[ext_resource type="Texture2D" uid="uid://brcfndahn7j3y" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_1.tres" id="5_lq2tm"]
+[ext_resource type="Texture2D" uid="uid://cp1oiub36rl7y" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_2.tres" id="6_swk4h"]
+[ext_resource type="Texture2D" uid="uid://c5re2gqryab64" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_3.tres" id="7_i6d28"]
+[ext_resource type="Texture2D" uid="uid://ctlvqmwm8uta2" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_4.tres" id="8_boofq"]
+[ext_resource type="Texture2D" uid="uid://c4qec75bjfb47" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_5.tres" id="9_ox8d6"]
+[ext_resource type="Texture2D" uid="uid://06wd0yrbw8q5" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_6.tres" id="10_11xx6"]
+[ext_resource type="Texture2D" uid="uid://dygd562hfp353" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_7.tres" id="11_dor8j"]
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="13_hao8s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fh5ig"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("1_hdeam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5ka5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rsdvt")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r8yjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lq2tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_swk4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i6d28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_boofq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ox8d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_11xx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dor8j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ntap"]
+size = Vector2(20, 21)
+
+[node name="peaShooter" type="Area2D" node_paths=PackedStringArray("anim", "rayCast2D", "种土上声音")]
+script = ExtResource("1_mla4w")
+anim = NodePath("AnimatedSprite2D")
+attackFrame = 2
+hp = 10
+rayCast2D = NodePath("RayCast2D")
+"种土上声音" = NodePath("种土上")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, -5.5)
+sprite_frames = SubResource("SpriteFrames_fh5ig")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_7ntap")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0.5, -5.5)
+target_position = Vector2(232, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="pos" type="Node2D" parent="."]
+position = Vector2(10, -13)
+
+[node name="种土上" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_hao8s")
+bus = &"Effects"

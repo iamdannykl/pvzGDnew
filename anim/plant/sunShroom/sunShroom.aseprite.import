@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cnw5bm2ign66h"
+path="res://.godot/imported/sunShroom.aseprite-86d5ddd86aa00c3c2e705b7ff1dba7ad.res"
+
+[deps]
+
+source_file="res://anim/plant/sunShroom/sunShroom.aseprite"
+dest_files=["res://.godot/imported/sunShroom.aseprite-86d5ddd86aa00c3c2e705b7ff1dba7ad.res"]
+
+[params]
+

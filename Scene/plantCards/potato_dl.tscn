@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfbb6wbwvmr7k"]
+
+[ext_resource type="Texture2D" uid="uid://ckwnclpxc64hv" path="res://anim/plant/potatoDL/potatalDL.png" id="1_4g845"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_a1y8q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eghud"]
+atlas = ExtResource("1_4g845")
+region = Rect2(16, 137, 24, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2nw6"]
+atlas = ExtResource("1_4g845")
+region = Rect2(16, 137, 24, 23)
+
+[node name="potatoDL" type="TextureButton"]
+offset_right = 26.0
+offset_bottom = 23.0
+pivot_offset = Vector2(0, 21)
+texture_normal = SubResource("AtlasTexture_eghud")
+script = ExtResource("2_a1y8q")
+plantType = 3
+sunCost = 25
+offset = Vector2(0, -8.5)
+heYeOffSet = Vector2(0, 3)
+cd = 20.0
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 25.0
+offset_bottom = 24.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = SubResource("AtlasTexture_v2nw6")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

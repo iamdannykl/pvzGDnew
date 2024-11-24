@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqin1e5h3ndak"]
+
+[ext_resource type="Texture2D" uid="uid://bdsar3o6hovil" path="res://anim/plant/daPenGu/daPenGu.png" id="1_gtbph"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_tteoa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0epn5"]
+atlas = ExtResource("1_gtbph")
+region = Rect2(227, 15, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i08ir"]
+atlas = ExtResource("1_gtbph")
+region = Rect2(227, 15, 24, 22)
+
+[node name="DaPenGuCard" type="TextureButton"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_right = 24.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 20)
+texture_normal = SubResource("AtlasTexture_0epn5")
+script = ExtResource("2_tteoa")
+plantType = 10
+offset = Vector2(0, -1)
+heYeOffSet = Vector2(0, -4)
+cd = 7.5
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = SubResource("AtlasTexture_i08ir")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

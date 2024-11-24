@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://xbn74y3ui2e5"]
+
+[ext_resource type="Texture2D" uid="uid://gtkag3e1k0vp" path="res://anim/plant/cherryBoom/CHERRYZD_44.PNG" id="1_00siv"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_1sn5e"]
+
+[node name="cherry" type="TextureButton"]
+offset_right = 24.0
+offset_bottom = 25.0
+pivot_offset = Vector2(0, 23)
+texture_normal = ExtResource("1_00siv")
+script = ExtResource("2_1sn5e")
+plantType = 4
+sunCost = 150
+heYeOffSet = Vector2(0, -3)
+cd = 20.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 25.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = ExtResource("1_00siv")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

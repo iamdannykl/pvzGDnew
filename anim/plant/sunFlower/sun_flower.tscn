@@ -1,0 +1,244 @@
+[gd_scene load_steps=30 format=3 uid="uid://bwekahjdpv1k4"]
+
+[ext_resource type="Script" path="res://code/sun_flower.cs" id="1_6cpri"]
+[ext_resource type="Texture2D" uid="uid://daxckf78uvehd" path="res://anim/plant/sunFlower/sunFlower.png" id="1_uv4h3"]
+[ext_resource type="PackedScene" uid="uid://epron77jpbfb" path="res://Scene/sun_creator.tscn" id="3_hxphu"]
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="4_yx028"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyvik"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(96, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps7ce"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(128, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4lci"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(0, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxh8s"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(32, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cdm2"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(64, 0, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otkpj"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(0, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kj8m"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(32, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwcjw"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(64, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx5yo"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(96, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs85x"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(128, 35, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if4mc"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(0, 70, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ntsv"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(32, 70, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl6al"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(64, 70, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl7l4"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(96, 70, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckura"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(128, 70, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnqbu"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(0, 105, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwxhj"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(32, 105, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db6ps"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(64, 105, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjru6"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(96, 105, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky8ig"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(128, 105, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01o0q"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(0, 140, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp3fd"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(32, 140, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp26x"]
+atlas = ExtResource("1_uv4h3")
+region = Rect2(64, 140, 32, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvcww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyvik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps7ce")
+}],
+"loop": true,
+"name": &"card",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4lci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxh8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cdm2")
+}],
+"loop": true,
+"name": &"face",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otkpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kj8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwcjw")
+}],
+"loop": true,
+"name": &"huaPan",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx5yo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs85x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if4mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ntsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl6al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl7l4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl6al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ntsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if4mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs85x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckura")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnqbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwxhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db6ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjru6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ky8ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01o0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp3fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp26x")
+}],
+"loop": true,
+"name": &"root",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72yyo"]
+size = Vector2(19, 20)
+
+[node name="sunFlower" type="Area2D" node_paths=PackedStringArray("anim", "种土上声音")]
+script = ExtResource("1_6cpri")
+anim = NodePath("AnimatedSprite2D")
+hp = 10
+noAtkPlant = true
+"种土上声音" = NodePath("种土上")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_wvcww")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.940918
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://anim/plant/sunFlower/sunFlower.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "f0b2b1f01ebb10fb56fed4d4140052ef"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_72yyo")
+
+[node name="sunCreator" parent="." instance=ExtResource("3_hxphu")]
+
+[node name="种土上" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yx028")
+bus = &"Effects"

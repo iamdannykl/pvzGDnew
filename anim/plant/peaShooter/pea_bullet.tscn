@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnuargw8dhh3c"]
+
+[ext_resource type="Script" path="res://code/pea_bullet.cs" id="1_m3b7j"]
+[ext_resource type="Texture2D" uid="uid://lkkthgyeeax8" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_12.tres" id="1_pc0gy"]
+[ext_resource type="Texture2D" uid="uid://d31h11wma2p6l" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_13.tres" id="2_doele"]
+[ext_resource type="Texture2D" uid="uid://b4yoo217a62mw" path="res://anim/plant/peaShooter/texturePacker/texture.sprites/DS DSi - Plants vs Zombies - Peashooter_11.tres" id="3_0gg5c"]
+[ext_resource type="AudioStream" uid="uid://cs3f4aemc17tt" path="res://audio/effects/啪.ogg" id="5_6r1g0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2k3v6"]
+size = Vector2(12, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3culs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pc0gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_doele")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0gg5c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="peaBullet" type="Area2D" node_paths=PackedStringArray("audioStreamPlayer")]
+z_index = 2
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_m3b7j")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+bltSpd = 1.7
+atkValue = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2k3v6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3culs")
+animation = &"explode"
+autoplay = "idle"
+frame = 1
+frame_progress = 1.0
+offset = Vector2(8.63, 8.07)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6r1g0")
+bus = &"Effects"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.8
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="atkZom"]
+[connection signal="timeout" from="Timer" to="." method="realDes"]

@@ -1,0 +1,183 @@
+[gd_scene load_steps=21 format=3 uid="uid://b14ejrkmbgnww"]
+
+[ext_resource type="Script" path="res://code/pea_shooter.cs" id="1_2kukv"]
+[ext_resource type="Texture2D" uid="uid://bmw0cjsmud1kv" path="res://anim/plant/snowPea/snowPea.png" id="2_1dtym"]
+[ext_resource type="AudioStream" uid="uid://ds08qwxckw4k7" path="res://audio/effects/种土里1.ogg" id="3_ii82h"]
+[ext_resource type="AudioStream" uid="uid://bhn0a5cgqeron" path="res://audio/effects/雪豌豆闪闪.ogg" id="4_x88rd"]
+[ext_resource type="AudioStream" uid="uid://jncfr64kamaq" path="res://audio/effects/冻结吧.ogg" id="5_qrs6v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_211ea"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(102, 32, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byyy5"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(0, 64, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0til"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(34, 64, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywxpw"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(68, 64, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_huwfp"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(102, 64, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htq1e"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(0, 96, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjro6"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(0, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ph1w"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(34, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p67h"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(68, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbxic"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(102, 0, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7dek"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(0, 32, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulrn8"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(34, 32, 34, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa3c1"]
+atlas = ExtResource("2_1dtym")
+region = Rect2(68, 32, 34, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1sf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_211ea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byyy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0til")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywxpw")
+}],
+"loop": true,
+"name": &"bullet",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_huwfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htq1e")
+}],
+"loop": true,
+"name": &"bulletDes",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjro6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ph1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p67h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbxic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7dek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulrn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa3c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulrn8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ntap"]
+size = Vector2(20, 21)
+
+[node name="snowPeaShooter" type="Area2D" node_paths=PackedStringArray("anim", "rayCast2D", "种土上声音", "ling", "freeze")]
+z_index = 1
+position = Vector2(1, 3)
+script = ExtResource("1_2kukv")
+anim = NodePath("AnimatedSprite2D")
+attackFrame = 2
+hp = 10
+bulletType = 1
+rayCast2D = NodePath("RayCast2D")
+"种土上声音" = NodePath("种土上")
+ling = NodePath("AudioStreamPlayer")
+freeze = NodePath("freeze")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.5, -5.5)
+sprite_frames = SubResource("SpriteFrames_s1sf7")
+animation = &"attack"
+autoplay = "idle"
+frame_progress = 0.605281
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "res://anim/plant/snowPea/snowPea.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cc6c0cffdfb0f262a72aae649119cf3b"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_7ntap")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0.5, -5.5)
+target_position = Vector2(232, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="pos" type="Node2D" parent="."]
+position = Vector2(10, -13)
+
+[node name="种土上" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ii82h")
+bus = &"Effects"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_x88rd")
+bus = &"Effects"
+
+[node name="freeze" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qrs6v")
+bus = &"Effects"

@@ -1,0 +1,318 @@
+{
+	"textures": [
+		{
+			"image": "texture.png",
+			"size": {
+				"w": 155,
+				"h": 124
+			},
+			"sprites": [
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_16.PNG",
+					"region": {
+						"x": 0,
+						"y": 0,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_0.PNG",
+					"region": {
+						"x": 31,
+						"y": 0,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_10.PNG",
+					"region": {
+						"x": 0,
+						"y": 31,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_11.PNG",
+					"region": {
+						"x": 31,
+						"y": 31,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_12.PNG",
+					"region": {
+						"x": 62,
+						"y": 0,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_13.PNG",
+					"region": {
+						"x": 62,
+						"y": 31,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_14.PNG",
+					"region": {
+						"x": 0,
+						"y": 62,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_15.PNG",
+					"region": {
+						"x": 31,
+						"y": 62,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_1.PNG",
+					"region": {
+						"x": 62,
+						"y": 62,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_17.PNG",
+					"region": {
+						"x": 93,
+						"y": 0,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_18.PNG",
+					"region": {
+						"x": 93,
+						"y": 31,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_19.PNG",
+					"region": {
+						"x": 93,
+						"y": 62,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_2.PNG",
+					"region": {
+						"x": 0,
+						"y": 93,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_4.PNG",
+					"region": {
+						"x": 31,
+						"y": 93,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_5.PNG",
+					"region": {
+						"x": 62,
+						"y": 93,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_6.PNG",
+					"region": {
+						"x": 93,
+						"y": 93,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_9.PNG",
+					"region": {
+						"x": 124,
+						"y": 0,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_8.PNG",
+					"region": {
+						"x": 31,
+						"y": 0,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_3.PNG",
+					"region": {
+						"x": 62,
+						"y": 62,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "DS DSi - Plants vs Zombies - Peashooter_7.PNG",
+					"region": {
+						"x": 62,
+						"y": 93,
+						"w": 31,
+						"h": 31
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "http://free-tex-packer.com",
+		"version": "0.6.7",
+		"format": "RGBA8888",
+	}
+}

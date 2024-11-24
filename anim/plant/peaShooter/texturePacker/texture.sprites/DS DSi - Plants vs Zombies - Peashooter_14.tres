@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dj4ljl5b6sm8j"]
+
+[ext_resource type="Texture2D" uid="uid://dnfp3tgugtqqf" path="res://anim/plant/peaShooter/texturePacker/texture.png" id="1_pew33"]
+
+[resource]
+atlas = ExtResource("1_pew33")
+region = Rect2(0, 62, 31, 31)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cby38ysstq1gr"]
+
+[ext_resource type="Texture2D" uid="uid://s1g7dkqso0l7" path="res://anim/plant/rePeater/rePeater.tres" id="1_iwadc"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_c7mki"]
+
+[node name="rePeater" type="TextureButton"]
+offset_right = 26.0
+offset_bottom = 23.0
+pivot_offset = Vector2(1, 21)
+texture_normal = ExtResource("1_iwadc")
+script = ExtResource("2_c7mki")
+UIpianYI = Vector2(1, 0)
+plantType = 1
+sunCost = 200
+heYeOffSet = Vector2(0, -5)
+cd = 7.5
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 23.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = ExtResource("1_iwadc")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

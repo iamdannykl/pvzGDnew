@@ -1,0 +1,295 @@
+[gd_scene load_steps=38 format=3 uid="uid://c1dcqwowyv2qv"]
+
+[ext_resource type="Texture2D" uid="uid://bva8h2eyvka15" path="res://anim/backGround/bgRes/DS DSi - Plants vs Zombies - Title Screen.png" id="1_etkse"]
+[ext_resource type="Script" path="res://Scene/title.cs" id="1_j25ri"]
+[ext_resource type="Texture2D" uid="uid://bxxmma6syym7c" path="res://black.png" id="2_csxh8"]
+[ext_resource type="Script" path="res://Scene/Edit.cs" id="3_hocyy"]
+[ext_resource type="Script" path="res://code/quit.cs" id="4_c4o8n"]
+[ext_resource type="Theme" uid="uid://cg4fh81xxnvje" path="res://theme/touMing.tres" id="4_f0r0q"]
+[ext_resource type="PackedScene" uid="uid://bbtwfc6mkqx6x" path="res://Scene/xuan_guan.tscn" id="5_lit06"]
+[ext_resource type="AudioStream" uid="uid://dhwcstiviam38" path="res://audio/effects/tap.ogg" id="5_yjse8"]
+[ext_resource type="Texture2D" uid="uid://bdphnv2qw1h07" path="res://DS DSi - Plants vs Zombies - Title Screen.png" id="6_ohtlx"]
+[ext_resource type="Texture2D" uid="uid://bey4cqmsc253" path="res://AnTitle Screen.png" id="7_tv1rf"]
+[ext_resource type="BitMap" uid="uid://c338mrhlvp357" path="res://white.png" id="8_3vabx"]
+[ext_resource type="BitMap" uid="uid://dac8wdd1j0ev2" path="res://baiMore.png" id="8_o1a1v"]
+[ext_resource type="Script" path="res://code/kaiShi.cs" id="8_ulrm4"]
+[ext_resource type="Texture2D" uid="uid://cajb1ma5u3yxv" path="res://logo.png" id="13_wpldm"]
+[ext_resource type="Script" path="res://code/openPage.cs" id="14_1ywau"]
+[ext_resource type="Texture2D" uid="uid://cpvx2a3to8fdv" path="res://anLogo.png" id="14_d70qq"]
+[ext_resource type="AudioStream" uid="uid://duwxudfs4481o" path="res://audio/bgm/nor.mp3" id="15_10ww1"]
+[ext_resource type="Texture2D" uid="uid://6437kvf8lq26" path="res://anim/backGround/DS DSi - Plants vs Zombies - Zen Normal Night Water & Toolbar Sprites.png" id="18_h60jm"]
+[ext_resource type="Script" path="res://code/ZenGardenEnter.cs" id="19_5u0u4"]
+[ext_resource type="Texture2D" uid="uid://b2jtrmk5ftban" path="res://anim/backGround/zenGardenGray.png" id="19_msdf3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyaxa"]
+atlas = ExtResource("6_ohtlx")
+region = Rect2(655, 32, 100, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4gnq"]
+atlas = ExtResource("7_tv1rf")
+region = Rect2(655, 32, 100, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tef2i"]
+atlas = ExtResource("6_ohtlx")
+region = Rect2(555, 99, 81, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5bdp"]
+atlas = ExtResource("7_tv1rf")
+region = Rect2(555, 99, 81, 62)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pgbk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_708bx"]
+atlas = ExtResource("13_wpldm")
+region = Rect2(5, 59, 36, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl4am"]
+atlas = ExtResource("14_d70qq")
+region = Rect2(5, 59, 36, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lut6"]
+atlas = ExtResource("13_wpldm")
+region = Rect2(6, 102, 36, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v2q6"]
+atlas = ExtResource("14_d70qq")
+region = Rect2(6, 102, 36, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_seoan"]
+atlas = ExtResource("13_wpldm")
+region = Rect2(6, 146, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_375rf"]
+atlas = ExtResource("14_d70qq")
+region = Rect2(6, 146, 35, 35)
+
+[sub_resource type="Animation" id="Animation_e8w0j"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_krqy4"]
+resource_name = "down"
+length = 0.72
+step = 0.0167
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-97, -0.25, 0, 0.25, 0, 100, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7181)
+}
+
+[sub_resource type="Animation" id="Animation_4dbk6"]
+resource_name = "up"
+length = 0.72
+step = 0.0167
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(100, -0.25, 0, 0.25, 0, 4.5, -0.118363, 43.3998, 0.15, -55, -97, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.35, 0.7167)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oyf66"]
+_data = {
+"RESET": SubResource("Animation_e8w0j"),
+"down": SubResource("Animation_krqy4"),
+"up": SubResource("Animation_4dbk6")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws1r6"]
+atlas = ExtResource("18_h60jm")
+region = Rect2(113, 70, 23, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04cps"]
+atlas = ExtResource("19_msdf3")
+region = Rect2(113, 70, 23, 24)
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_j25ri")
+
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("2_csxh8")
+
+[node name="backGround" type="Sprite2D" parent="."]
+position = Vector2(0.5, 0)
+texture = ExtResource("1_etkse")
+region_enabled = true
+region_rect = Rect2(9, 201, 255, 192)
+
+[node name="Edit" type="Button" parent="." node_paths=PackedStringArray("start")]
+offset_left = -110.0
+offset_top = -35.0
+offset_right = -21.0
+offset_bottom = -4.0
+theme = ExtResource("4_f0r0q")
+theme_type_variation = &"FlatButton"
+text = "EDIT"
+script = ExtResource("3_hocyy")
+start = NodePath("../xuanGuan")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Edit"]
+stream = ExtResource("5_yjse8")
+bus = &"Effects"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -1)
+zoom = Vector2(3.405, 3.405)
+
+[node name="quit" type="Button" parent="."]
+offset_left = -86.0
+offset_top = 53.0
+offset_right = -38.0
+offset_bottom = 84.0
+theme = ExtResource("4_f0r0q")
+theme_type_variation = &"FlatButton"
+text = "QUIT"
+script = ExtResource("4_c4o8n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="quit"]
+stream = ExtResource("5_yjse8")
+bus = &"Effects"
+
+[node name="kaiShi" type="TextureButton" parent="." node_paths=PackedStringArray("start")]
+offset_left = 5.0
+offset_top = -72.0
+offset_right = 105.0
+offset_bottom = -2.0
+texture_normal = SubResource("AtlasTexture_tyaxa")
+texture_pressed = SubResource("AtlasTexture_d4gnq")
+texture_click_mask = ExtResource("8_3vabx")
+script = ExtResource("8_ulrm4")
+start = NodePath("../xuanGuan")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="kaiShi"]
+stream = ExtResource("5_yjse8")
+bus = &"Effects"
+
+[node name="more" type="TextureButton" parent="."]
+offset_left = 8.0
+offset_top = -28.0
+offset_right = 108.0
+offset_bottom = 42.0
+texture_normal = SubResource("AtlasTexture_tef2i")
+texture_pressed = SubResource("AtlasTexture_p5bdp")
+texture_click_mask = ExtResource("8_o1a1v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="more"]
+stream = ExtResource("5_yjse8")
+bus = &"Effects"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = -122.0
+offset_top = -76.0
+offset_right = -2.0
+offset_bottom = -54.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_5pgbk")
+
+[node name="QQ" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -169.0
+offset_top = -31.0
+offset_right = -129.0
+offset_bottom = 9.0
+texture_normal = SubResource("AtlasTexture_708bx")
+texture_pressed = SubResource("AtlasTexture_tl4am")
+script = ExtResource("14_1ywau")
+url = "https://qm.qq.com/q/EVFEF3aBDU"
+
+[node name="Discord" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -169.0
+offset_top = 12.0
+offset_right = -129.0
+offset_bottom = 52.0
+texture_normal = SubResource("AtlasTexture_5lut6")
+texture_pressed = SubResource("AtlasTexture_4v2q6")
+script = ExtResource("14_1ywau")
+url = "https://discord.gg/wHbmrDaVKj"
+
+[node name="Bilibili" type="TextureButton" parent="."]
+z_index = 1
+offset_left = -169.0
+offset_top = 54.0
+offset_right = -129.0
+offset_bottom = 94.0
+texture_normal = SubResource("AtlasTexture_seoan")
+texture_pressed = SubResource("AtlasTexture_375rf")
+script = ExtResource("14_1ywau")
+url = "https://space.bilibili.com/86443595?spm_id_from=333.1007.0.0"
+
+[node name="Free" type="Label" parent="."]
+visible = false
+offset_left = 130.0
+offset_top = -94.0
+offset_right = 170.0
+offset_bottom = -45.0
+text = "完 全
+免 费"
+
+[node name="Free2" type="Label" parent="."]
+offset_left = -168.0
+offset_top = -94.0
+offset_right = -128.0
+offset_bottom = -45.0
+text = "社 交
+媒 体"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_10ww1")
+autoplay = true
+bus = &"Bgm"
+
+[node name="xuanGuan" parent="." instance=ExtResource("5_lit06")]
+offset_left = -133.0
+offset_top = 100.0
+offset_right = -133.0
+offset_bottom = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="xuanGuan"]
+libraries = {
+"": SubResource("AnimationLibrary_oyf66")
+}
+
+[node name="zenGarden" type="TextureButton" parent="."]
+offset_left = 78.0
+offset_top = 46.0
+offset_right = 101.0
+offset_bottom = 70.0
+scale = Vector2(2, 2)
+texture_normal = SubResource("AtlasTexture_ws1r6")
+texture_pressed = SubResource("AtlasTexture_04cps")
+stretch_mode = 3
+script = ExtResource("19_5u0u4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -109.0
+offset_top = 5.0
+offset_right = 27.0
+offset_bottom = 53.0
+text = "↑↑↑先创建关卡才能
+游玩关卡，点EDIT"
+
+[connection signal="button_up" from="zenGarden" to="zenGarden" method="enterZenGarden"]

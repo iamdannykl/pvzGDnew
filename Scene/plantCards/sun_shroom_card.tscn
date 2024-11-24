@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://baqsmsee24cq2"]
+
+[ext_resource type="Texture2D" uid="uid://dr5eopbqa3hlr" path="res://anim/plant/sunShroom/sunShroom.png" id="1_ye7tu"]
+[ext_resource type="Script" path="res://code/clickButton.cs" id="2_ogjet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wspb6"]
+atlas = ExtResource("1_ye7tu")
+region = Rect2(3, 125, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6gcu"]
+atlas = ExtResource("1_ye7tu")
+region = Rect2(3, 125, 24, 22)
+
+[node name="sunShroomCard" type="TextureButton"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_right = 24.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 20)
+texture_normal = SubResource("AtlasTexture_wspb6")
+script = ExtResource("2_ogjet")
+plantType = 11
+sunCost = 25
+offset = Vector2(0, -1)
+heYeOffSet = Vector2(0, -4)
+cd = 7.5
+metadata/_edit_group_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 1.0
+max_value = 1.0
+step = 0.0
+fill_mode = 4
+texture_progress = SubResource("AtlasTexture_t6gcu")
+tint_progress = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1

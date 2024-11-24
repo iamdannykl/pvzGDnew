@@ -1,0 +1,187 @@
+[gd_scene load_steps=15 format=3 uid="uid://bbtwfc6mkqx6x"]
+
+[ext_resource type="Script" path="res://code/xuan_guan.cs" id="1_tehl0"]
+[ext_resource type="Texture2D" uid="uid://blujqye77knm" path="res://anim/backGround/116729.png" id="2_i8a1a"]
+[ext_resource type="Theme" uid="uid://c0yothtxikqp4" path="res://theme/PVZ/pvzTheme.tres" id="2_r3uel"]
+[ext_resource type="Texture2D" uid="uid://cgkvaktpee1d2" path="res://anim/backGround/121700.png" id="3_v808h"]
+[ext_resource type="Texture2D" uid="uid://co38ss68yj1jv" path="res://anim/backGround/155613.png" id="4_ea1ft"]
+[ext_resource type="Texture2D" uid="uid://msvvoo5hngwe" path="res://anim/backGround/155614.png" id="5_vfyw4"]
+[ext_resource type="Texture2D" uid="uid://bxxqxo3xteqyp" path="res://anim/backGround/155192.png" id="6_slxlj"]
+[ext_resource type="Script" path="res://Back.cs" id="7_sux5e"]
+[ext_resource type="Script" path="res://code/ADD.cs" id="8_hobg6"]
+[ext_resource type="PackedScene" uid="uid://cmlfjne8ramlg" path="res://start.tscn" id="9_55cdr"]
+
+[sub_resource type="Animation" id="Animation_k0b14"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(299, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_aow0d"]
+resource_name = "down"
+length = 0.7
+step = 0.0167
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(92, -0.25, 0, 0.25, 0, 299, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7)
+}
+
+[sub_resource type="Animation" id="Animation_o5hnw"]
+resource_name = "up"
+length = 0.7
+step = 0.0167
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("start:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(299, -0.25, 0, 0.25, 0, 92, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s00t7"]
+_data = {
+"RESET": SubResource("Animation_k0b14"),
+"down": SubResource("Animation_aow0d"),
+"up": SubResource("Animation_o5hnw")
+}
+
+[node name="xuanGuan" type="Control" node_paths=PackedStringArray("gqList", "whichGtype")]
+z_index = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -103.0
+offset_right = -1024.0
+offset_bottom = -554.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tehl0")
+gqList = NodePath("Panel/ItemList")
+whichGtype = NodePath("Panel/Label/OptionButton")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -37.0
+offset_right = 303.0
+offset_bottom = 195.0
+theme = ExtResource("2_r3uel")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 41.0
+offset_right = 158.0
+offset_bottom = 64.0
+text = "关卡地图类型："
+
+[node name="OptionButton" type="OptionButton" parent="Panel/Label"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = -2.0
+offset_right = 344.0
+offset_bottom = 94.014
+scale = Vector2(0.276966, 0.276966)
+theme = ExtResource("2_r3uel")
+item_count = 5
+popup/item_0/text = "grassDay"
+popup/item_0/icon = ExtResource("2_i8a1a")
+popup/item_1/text = "grassNight"
+popup/item_1/icon = ExtResource("3_v808h")
+popup/item_1/id = 1
+popup/item_2/text = "poolDay"
+popup/item_2/icon = ExtResource("4_ea1ft")
+popup/item_2/id = 2
+popup/item_3/text = "poolNight"
+popup/item_3/icon = ExtResource("5_vfyw4")
+popup/item_3/id = 3
+popup/item_4/text = "roof"
+popup/item_4/icon = ExtResource("6_slxlj")
+popup/item_4/id = 4
+
+[node name="Back" type="Button" parent="Panel" node_paths=PackedStringArray("start")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_top = 39.0
+offset_right = 4.0
+offset_bottom = 78.0
+grow_horizontal = 0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("2_r3uel")
+text = "返回"
+script = ExtResource("7_sux5e")
+start = NodePath("../..")
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -125.0
+offset_right = 158.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_r3uel")
+max_columns = 8
+
+[node name="MODE" type="Label" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 40.0
+offset_right = 46.0
+offset_bottom = 63.0
+
+[node name="ADD" type="Button" parent="Panel" node_paths=PackedStringArray("anim")]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 39.0
+offset_right = 290.0
+offset_bottom = 76.0
+scale = Vector2(0.7, 0.7)
+theme = ExtResource("2_r3uel")
+text = "ADD"
+script = ExtResource("8_hobg6")
+anim = NodePath("../AnimationPlayer")
+
+[node name="start" parent="Panel" instance=ExtResource("9_55cdr")]
+layout_mode = 1
+offset_left = 138.0
+offset_top = 299.0
+offset_right = 138.0
+offset_bottom = 299.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+libraries = {
+"": SubResource("AnimationLibrary_s00t7")
+}
+
+[connection signal="item_selected" from="Panel/Label/OptionButton" to="." method="selectType"]
+[connection signal="item_selected" from="Panel/ItemList" to="." method="selectGuanQia"]
